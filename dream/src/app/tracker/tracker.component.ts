@@ -18,7 +18,6 @@ export class TrackerComponent implements OnInit {
   }
 
   track() {
-    // alert(this.applicationId);
     this.customerService.trackApplication(this.applicationId).subscribe(response => {
       this.appStatus = response;
       alert(JSON.stringify(this.appStatus));
