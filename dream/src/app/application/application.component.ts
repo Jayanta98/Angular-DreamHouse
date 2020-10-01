@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Application } from '../models/Application';
 import { CustomerService } from '../customer.service';
+import { ApplicationSubmitStatus } from '../models/ApplicationSubmitStatus';
 
 @Component({
   selector: 'app-application',
@@ -10,7 +11,7 @@ import { CustomerService } from '../customer.service';
 export class ApplicationComponent implements OnInit {
   model: any = {};
   application: Application = new Application();
-
+  regsteringStatus :ApplicationSubmitStatus;
   constructor(private customerService: CustomerService) { }
 
   ngOnInit(): void {
@@ -27,7 +28,9 @@ export class ApplicationComponent implements OnInit {
       console.log(response.status);
       console.log(response.applicationId);
       console.log(response.name);
-      alert(JSON.stringify(response));      
+      //alert(JSON.stringify(response));
+      this.regsteringStatus=response;
+      alert(JSON.stringify(this.regsteringStatus))   //need to create an registeringStatus----> this.regsteringStatus=response;
     })
   }
 

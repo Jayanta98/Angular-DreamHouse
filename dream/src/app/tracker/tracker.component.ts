@@ -10,7 +10,7 @@ import { Status } from '../models/Status';
 export class TrackerComponent implements OnInit {
 
   applicationId: number;
-  appStatus: Status;
+  appStatus: Status = new Status();
 
   constructor(private customerService: CustomerService) { }
 
@@ -19,7 +19,9 @@ export class TrackerComponent implements OnInit {
 
   track() {
     this.customerService.trackApplication(this.applicationId).subscribe(response => {
+
       this.appStatus = response;
+
       alert(JSON.stringify(this.appStatus));
       console.log(this.appStatus.status);
       console.log(this.appStatus.statusMessage);
