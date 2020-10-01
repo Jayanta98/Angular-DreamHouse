@@ -11,6 +11,7 @@ import { ContactUSComponent } from './contact-us/contact-us.component';
 import { ApplicationComponent } from './application/application.component';
 import { FormsModule } from '@angular/forms';
 import { MustMatchDirective } from './_helpers/must-match.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MustMatchDirective } from './_helpers/must-match.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

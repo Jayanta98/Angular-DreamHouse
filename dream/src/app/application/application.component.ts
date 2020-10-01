@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Application } from '../models/Application';
+import { CustomerService } from '../customer.service';
 
 @Component({
   selector: 'app-application',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApplicationComponent implements OnInit {
   model: any = {};
-  constructor() { }
+  application: Application = new Application();
+
+  constructor(private customerService: CustomerService) { }
 
   ngOnInit(): void {
   }
@@ -15,7 +19,16 @@ export class ApplicationComponent implements OnInit {
 
 
   onSubmit() {
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model, null, 4));
+    // this.application.applicationStatus = "Pending";
+    // this.application.dateOfAppointment = "2020-10-07";
+    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.application));
+    this.customerService.applicationSubmit(this.application).subscribe(response => {
+      console.log(response.statusMessage);
+      console.log(response.status);
+      console.log(response.applicationId);
+      console.log(response.name);
+      alert(JSON.stringify(response));      
+    })
   }
 
 }
