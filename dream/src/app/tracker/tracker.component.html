@@ -40,14 +40,14 @@
 
 
 <div class=" container text-center w-50 h-200px">
-  <form  method="post">
+  <form  (ngSubmit)="track()">
     <div class="imgcontainer">
       <img src="assets/images/tjpg.jpg"  class="avatar">
     </div>
 
     <div class="container">
       <label for="uname"><b>Loan Application Tracker</b></label>
-      <input type="text" placeholder="Enter Application Number" name="applicationNo" required>
+      <input type="text" placeholder="Enter Application Number" name="applicationNo" [(ngModel)]="applicationId" required>
 
       <button class="mybtn" type="submit">Calculate</button>
 
