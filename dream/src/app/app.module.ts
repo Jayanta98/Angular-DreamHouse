@@ -8,6 +8,9 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { TrackerComponent } from './tracker/tracker.component';
 import { FaqComponent } from './faq/faq.component';
 import { ContactUSComponent } from './contact-us/contact-us.component';
+import { ApplicationComponent } from './application/application.component';
+import { FormsModule } from '@angular/forms';
+import { MustMatchDirective } from './_helpers/must-match.directive';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,14 @@ import { ContactUSComponent } from './contact-us/contact-us.component';
     CalculatorComponent,
     TrackerComponent,
     FaqComponent,
-    ContactUSComponent
+    ContactUSComponent,
+    ApplicationComponent,
+    MustMatchDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

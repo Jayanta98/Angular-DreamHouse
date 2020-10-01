@@ -5,6 +5,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { TrackerComponent } from './tracker/tracker.component';
 import { FaqComponent } from './faq/faq.component';
 import { ContactUSComponent } from './contact-us/contact-us.component';
+import { ApplicationComponent } from './application/application.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,6 +14,8 @@ const routes: Routes = [
   { path: 'tracker', component: TrackerComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'contactUs', component: ContactUSComponent },
+
+  { path: 'application', component: ApplicationComponent },
 ];
 
 @NgModule({
