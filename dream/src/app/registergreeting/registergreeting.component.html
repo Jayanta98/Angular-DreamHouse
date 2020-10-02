@@ -1,5 +1,28 @@
-<h1>Welcome {{name}}. You have successfully registered for Dream House</h1><!-- mention session storage data-->
-<p>Your Application Id is{{applicationId}}</p>
-<p>Your Date of appointment is {{dateofappointment}}</p>
-<p>Please fill out rest of your information for further services.</p>
-<a class="complete-details" [routerLink]="['/income']">Click here to complete your registation process</a>
+<div class="container-fluid pt-3 m-1">
+   <h1 style="text-align: center; color:blue"> Congratulations!! {{name}}</h1>
+</div>
+
+
+<div  style="padding:20px ;  margin-left:350px;">
+ <img src="assets/images/grt.png" style="height: 200px; width: -75px;">
+</div>
+<div class="p-3">
+  <div class="p-4 m-4">
+    <div class="card text-center">
+      <div class="card-header">
+        <h3>You have successfully registered for Dream House</h3>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Your Application Id is &nbsp;{{applicationId}}</h5>
+        <h5 class="card-title">Your Date of appointment is &nbsp; {{dateofappointment}}</h5>
+        <p class="card-text text-danger">Please fill out rest of your information for further services.</p>
+        <a  [routerLink]="['/income']" class="btn btn-primary">GoTo Next</a>
+      </div>
+      <div class="card-footer text-muted">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
