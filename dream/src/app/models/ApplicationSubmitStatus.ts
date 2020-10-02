@@ -3,4 +3,5 @@ export class ApplicationSubmitStatus {
     statusMessage: string;
     applicationId: number;
     name: string;
+    dateofappointment: Date;
 }
