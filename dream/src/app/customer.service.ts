@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Application } from './models/Application';
 import { ApplicationSubmitStatus } from './models/ApplicationSubmitStatus';
-import { Income } from './models/income';
+import { IncomeDetails } from './models/IncomeDetails';
 import { Status } from './models/Status';
 
 @Injectable({
@@ -19,9 +19,9 @@ export class CustomerService {
     return this.http.post<ApplicationSubmitStatus>(url, application);
   }
 
-  incomeSubmit(income: Income) : Observable <any> {
+  incomeSubmit(incomeDetails: IncomeDetails) : Observable <Status> {
     let url = 'http://localhost:9292/income-submit';
-    return this.http.post<ApplicationSubmitStatus>(url, income);
+    return this.http.post<Status>(url, incomeDetails);
   }
 
   trackApplication(applicationId: number) : Observable<Status> {

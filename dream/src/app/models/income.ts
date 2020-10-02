@@ -1,6 +1,6 @@
 export class Income {
-    typeofemployment: string;
-    organizationtype: string;
-    employername: string;
-    retirementage: string;
+    typeOfEmployement: string;
+    organizationType: string;
+    employerName: string;
+    retirementAge: number;
 }

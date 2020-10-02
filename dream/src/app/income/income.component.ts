@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Income} from '../models/income';
+import { Router } from '@angular/router';
+import { IncomeDetails } from '../models/IncomeDetails';
 import { CustomerService } from '../customer.service';
+import { Status } from '../models/Status';
 
 @Component({
   selector: 'app-income',
@@ -10,18 +12,31 @@ import { CustomerService } from '../customer.service';
 export class IncomeComponent implements OnInit {
 
   model: any= {};
-  income: Income= new Income();
+  incomeDetails: IncomeDetails = new IncomeDetails();
+  applicationId: any;
+  appStatus: Status = new Status();
 
 
-  constructor(private customerService: CustomerService) { }
+  constructor(
+    private customerService: CustomerService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.applicationId = localStorage.getItem("applicationId");
   }
 
   onSubmit(){
-    this.customerService.incomeSubmit(this.income).subscribe(response => {
-      alert(JSON.stringify(response));      
+    this.incomeDetails.applicationId = this.applicationId;
+    alert(JSON.stringify(this.incomeDetails));
+    this.customerService.incomeSubmit(this.incomeDetails).subscribe(response => {
+      this.appStatus = response;
+      alert(JSON.stringify(this.appStatus));      
     })
+
+    if(this.appStatus.status == true) {
+      this.router.navigate(['/property']);
+    }
   }
 
 }

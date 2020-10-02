@@ -14,7 +14,8 @@ import { DatePipe } from '@angular/common';
 export class ApplicationComponent implements OnInit {
   model: any = {};
   application: Application = new Application();
-  regsteringStatus :ApplicationSubmitStatus;
+  regsteringStatus: ApplicationSubmitStatus;
+
   constructor(private customerService: CustomerService,private router: Router, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
@@ -38,11 +39,12 @@ export class ApplicationComponent implements OnInit {
       console.log(this.regsteringStatus.dateofappointment);
       
       if(this.regsteringStatus.status==true){
-        localStorage.setItem('name',response.name);
-        localStorage.setItem("applicationId",String(response.applicationId));
-        localStorage.setItem("dateofappointment",this.datePipe.transform(response.dateofappointment,"yyyy-MM-dd"));
+        localStorage.setItem('name', String(response.name));
+        localStorage.setItem('applicationId', String(response.applicationId));
+        localStorage.setItem('dateofappointment', this.datePipe.transform(response.dateofappointment,"yyyy-MM-dd"));
         this.router.navigate(['/on-register']);
-      }else{
+      }
+      else{
         this.router.navigate(['/error']);
       }
 
