@@ -19,10 +19,11 @@
     </div>
 
     <div class="container">
-      <label for="uname"><b>Eligibility Calculator</b></label>
-      <input type="text" placeholder="Enter Annual Income " name="uname" required>
+      <label for="uname"><b>Eligibility Calculator</b></label><br/>
+      <label for="uname" style="color:blue"><b>Elligible For {{loanAmmount}} Loan Ammount</b></label>
+      <input type="text" placeholder="Enter Net Monthly Salary " name="uname"  [(ngModel)]="monthlyIncome" required>
 
-      <button type="submit">Calculate</button>
+      <button (click)="elligibilityCal()" >Calculate</button>
 
     </div>
   </form>
@@ -47,10 +48,11 @@
     </div>
 
     <div class="container">
-      <label for="uname"><b>EMI Calculator</b></label>
-      <input type="text" placeholder="Enter Loan Amount " name="loanamount" required>
-      <input type="text" placeholder="Enter Loan Tenure " name="tenure" required>
-      <button type="submit">Calculate</button>
+      <label for="uname"><b>EMI Calculator</b></label><br/>
+      <label for="uname" style="color:blue"><b>You Have To Pay {{emi}} EMI</b></label>
+      <input type="text" placeholder="Enter Loan Amount " name="loanamount" [(ngModel)]="p" required>
+      <input type="text" placeholder="Enter Number of Months (Loan Tenure) " name="tenure" [(ngModel)]="n" required>
+      <button (click)="emiCal()" >Calculate</button>
 
     </div>
   </form>
