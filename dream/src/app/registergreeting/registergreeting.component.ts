@@ -9,14 +9,15 @@ export class RegistergreetingComponent implements OnInit {
 
   name: string;//return from backend
   applicationId: number;//return from back end
-  dateofappointment: Date;//return from backend
+  dateofappointment: any;//return from backend
 
   constructor() { }
 
   ngOnInit(): void {
 
-    this.name =sessionStorage.getItem("name");
-    this.applicationId= Number(sessionStorage.getItem("applicationId"));
+    this.name =localStorage.getItem("name");
+    this.applicationId= Number(localStorage.getItem("applicationId"));
+    this.dateofappointment= localStorage.getItem("dateofappointment");//date in string format;
     
   }
 

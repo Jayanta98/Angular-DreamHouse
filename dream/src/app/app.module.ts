@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { DatePipe } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IncomeComponent } from './income/income.component';
 import { PropertyComponent } from './property/property.component';
 import { RegistergreetingComponent } from './registergreeting/registergreeting.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { RegistergreetingComponent } from './registergreeting/registergreeting.c
     MustMatchDirective,
     IncomeComponent,
     PropertyComponent,
-    RegistergreetingComponent
+    RegistergreetingComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ import { RegistergreetingComponent } from './registergreeting/registergreeting.c
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
