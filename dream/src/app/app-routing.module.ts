@@ -10,6 +10,7 @@ import { RegistergreetingComponent } from './registergreeting/registergreeting.c
 import { ErrorComponent } from './error/error.component';
 import { IncomeComponent } from './income/income.component';
 import { PropertyComponent } from './property/property.component';
+import { LoanComponent } from './loan/loan.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'on-register', component: RegistergreetingComponent },
   { path: 'error', component: ErrorComponent },
   { path: 'income', component: IncomeComponent },
-  { path: 'property', component: PropertyComponent }
+  { path: 'property', component: PropertyComponent },
+  { path: 'loan', component:LoanComponent}
 ];
 
 @NgModule({

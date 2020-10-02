@@ -17,6 +17,7 @@ import { IncomeComponent } from './income/income.component';
 import { PropertyComponent } from './property/property.component';
 import { RegistergreetingComponent } from './registergreeting/registergreeting.component';
 import { ErrorComponent } from './error/error.component';
+import { LoanComponent } from './loan/loan.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ErrorComponent } from './error/error.component';
     IncomeComponent,
     PropertyComponent,
     RegistergreetingComponent,
-    ErrorComponent
+    ErrorComponent,
+    LoanComponent
   ],
   imports: [
     BrowserModule,
