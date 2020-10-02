@@ -31,6 +31,8 @@ export class ApplicationComponent implements OnInit {
       //alert(JSON.stringify(response));
       this.regsteringStatus=response;
       alert(JSON.stringify(this.regsteringStatus))   //need to create an registeringStatus----> this.regsteringStatus=response;
+      sessionStorage.setItem('name',response.name);
+      sessionStorage.setItem("applicationId",String(response.applicationId));
     })
   }
 
