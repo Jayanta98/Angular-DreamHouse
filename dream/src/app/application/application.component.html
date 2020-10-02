@@ -69,9 +69,9 @@
 
         <div class="form-group">
           <label>Date of Birth</label>
-          <input type="text" name="dateofBirth" class="form-control" [(ngModel)]="application.dateOfBirth" #dateofBirth="ngModel" [ngClass]="{ 'is-invalid': f.submitted && dateofBirth.invalid }" required >
+          <input type="text" name="dateofBirth" placeholder="Enter DOB in YYYY-MM-DD Format" class="form-control" [(ngModel)]="application.dateOfBirth" #dateofBirth="ngModel" [ngClass]="{ 'is-invalid': f.submitted && dateofBirth.invalid }" required >
           <div *ngIf="f.submitted && dateofBirth.invalid" class="invalid-feedback">
-              <div *ngIf="dateofBirth.errors.required">Phone Number is required</div>
+              <div *ngIf="dateofBirth.errors.required">Date Of Birth is required</div>
 
           </div>
       </div>
@@ -119,11 +119,8 @@
 
 
 
-          <!-- <div class="form-group form-check">
-              <input type="checkbox" name="acceptTerms" id="acceptTerms" class="form-check-input" [(ngModel)]="model.acceptTerms" #acceptTerms="ngModel" [ngClass]="{ 'is-invalid': f.submitted && acceptTerms.invalid }" required>
-              <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
-              <div *ngIf="f.submitted && acceptTerms.invalid" class="invalid-feedback">Accept Ts & Cs is required</div>
-          </div> -->
+
+
           <div class="text-center">
               <button class="btn btn-primary mr-1">Register</button>
               <button class="btn btn-secondary" type="reset">Cancel</button>

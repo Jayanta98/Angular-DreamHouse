@@ -14,7 +14,6 @@ const routes: Routes = [
   { path: 'tracker', component: TrackerComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'contactUs', component: ContactUSComponent },
-
   { path: 'application', component: ApplicationComponent },
 ];
 
