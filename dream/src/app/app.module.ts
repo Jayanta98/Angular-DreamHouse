@@ -19,6 +19,9 @@ import { RegistergreetingComponent } from './registergreeting/registergreeting.c
 import { ErrorComponent } from './error/error.component';
 import { LoanComponent } from './loan/loan.component';
 import { DocumentComponent } from './document/document.component';
+import { LoginComponent } from './login/login.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { CustomerloginComponent } from './customerlogin/customerlogin.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { DocumentComponent } from './document/document.component';
     RegistergreetingComponent,
     ErrorComponent,
     LoanComponent,
-    DocumentComponent
+    DocumentComponent,
+    LoginComponent,
+    AdminloginComponent,
+    CustomerloginComponent
   ],
   imports: [
     BrowserModule,

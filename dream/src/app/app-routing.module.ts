@@ -12,6 +12,10 @@ import { IncomeComponent } from './income/income.component';
 import { PropertyComponent } from './property/property.component';
 import { LoanComponent } from './loan/loan.component';
 import { DocumentComponent } from './document/document.component';
+import { LoginComponent } from './login/login.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { CustomerloginComponent } from './customerlogin/customerlogin.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -26,7 +30,10 @@ const routes: Routes = [
   { path: 'income', component: IncomeComponent },
   { path: 'property', component: PropertyComponent },
   { path: 'loan', component:LoanComponent},
-  { path: 'document', component:DocumentComponent}
+  { path: 'document', component:DocumentComponent},
+  { path: 'login', component:LoginComponent},
+  { path: 'admin-login', component:AdminloginComponent},
+  { path: 'customer-login', component:CustomerloginComponent}
 ];
 
 @NgModule({
