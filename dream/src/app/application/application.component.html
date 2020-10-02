@@ -1,6 +1,8 @@
 <!-- main app container -->
+
+<div style="width: 900px; margin-left:250px">
 <div class="card m-3">
-  <h5 class="card-header text-center text-danger">Application Form</h5>
+  <h2 class="card-header text-center text-danger mt-3">Registration Form</h2>
   <div class="card-body">
       <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" [mustMatch]="['password', 'confirmPassword']" novalidate>
           <div class="form-row">
@@ -128,4 +130,4 @@
       </form>
   </div>
 </div>
-
+</div>

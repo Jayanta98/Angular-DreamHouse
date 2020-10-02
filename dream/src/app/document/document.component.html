@@ -1,10 +1,11 @@
 <!-- main app container -->
+<div style="width: 900px; margin-left:250px">
 <div class="card m-3">
-    <h5 class="card-header text-center text-danger">Document Uploads</h5>
+    <h2 class="card-header text-center text-danger m-3">Document Uploads</h2>
     <div class="card-body">
         <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-            <div class="form-row">
-  
+
+
                 <div class="form-group">
                     <label>Upload Pan Card</label>
                     <input type="file" name="pancard" class="form-control" [(ngModel)]="document.pancard" #pancard="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pancard.invalid }" required>
@@ -12,7 +13,7 @@
                         <div *ngIf="pancard.errors.required">Pan Card is required</div>
                     </div>
                 </div>
-  
+
                 <div class="form-group ">
                     <label>Upload Voter ID Card</label>
                     <input type="file" name="voterid" class="form-control" [(ngModel)]="document.voterid" #voterid="ngModel" [ngClass]="{ 'is-invalid': f.submitted && voterid.invalid }" required>
@@ -20,7 +21,7 @@
                         <div *ngIf="voterid.errors.required">Voter ID Card is required</div>
                     </div>
                 </div>
-            </div>
+
             <div class="form-group">
                 <label>Upload Salary Slip</label>
                 <input type="file" name="salaryslip" class="form-control" [(ngModel)]="document.salaryslip" #salaryslip="ngModel" [ngClass]="{ 'is-invalid': f.submitted && salaryslip.invalid }" required >
@@ -28,7 +29,7 @@
                     <div *ngIf="salaryslip.errors.required">Salary Slip is required</div>
                 </div>
             </div>
-            
+
             <div class="form-group">
               <label>Upload letter of Authorization</label>
               <input type="file" name="loa" class="form-control" [(ngModel)]="document.loa" #loa="ngModel" [ngClass]="{ 'is-invalid': f.submitted && loa.invalid }" required >
@@ -52,7 +53,7 @@
                     <div *ngIf="agreementtosale.errors.required">Agreement To Sale is required</div>
                 </div>
             </div>
-  
+
             <div class="text-center">
                 <button class="btn btn-primary mr-1">Next</button>
                 <button class="btn btn-secondary" type="reset">Cancel</button>
@@ -60,6 +61,6 @@
         </form>
     </div>
   </div>
-  
-  
+
+</div>
 
