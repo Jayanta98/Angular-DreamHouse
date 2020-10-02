@@ -23,7 +23,7 @@
             </div>
             <div class="form-group">
                 <label>Estimated amount of property</label>
-                <input type="text" name="estimatedAmount" class="form-control" [(ngModel)]="property.estimatedAmount" #estimatedAmount="ngModel" [ngClass]="{ 'is-invalid': f.submitted && estimatedAmount.invalid }" required >
+                <input type="number" name="estimatedAmount" class="form-control" [(ngModel)]="property.estimatedAmount" #estimatedAmount="ngModel" [ngClass]="{ 'is-invalid': f.submitted && estimatedAmount.invalid }" required >
                 <div *ngIf="f.submitted && estimatedAmount.invalid" class="invalid-feedback">
                     <div *ngIf="estimatedAmount.errors.required">Estimated Amount is required</div>
                 </div>

@@ -18,6 +18,7 @@ import { PropertyComponent } from './property/property.component';
 import { RegistergreetingComponent } from './registergreeting/registergreeting.component';
 import { ErrorComponent } from './error/error.component';
 import { LoanComponent } from './loan/loan.component';
+import { DocumentComponent } from './document/document.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LoanComponent } from './loan/loan.component';
     PropertyComponent,
     RegistergreetingComponent,
     ErrorComponent,
-    LoanComponent
+    LoanComponent,
+    DocumentComponent
   ],
   imports: [
     BrowserModule,

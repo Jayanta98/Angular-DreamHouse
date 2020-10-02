@@ -11,6 +11,7 @@ import { ErrorComponent } from './error/error.component';
 import { IncomeComponent } from './income/income.component';
 import { PropertyComponent } from './property/property.component';
 import { LoanComponent } from './loan/loan.component';
+import { DocumentComponent } from './document/document.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'error', component: ErrorComponent },
   { path: 'income', component: IncomeComponent },
   { path: 'property', component: PropertyComponent },
-  { path: 'loan', component:LoanComponent}
+  { path: 'loan', component:LoanComponent},
+  { path: 'document', component:DocumentComponent}
 ];
 
 @NgModule({

@@ -8,6 +8,7 @@ import { IncomeDetails } from './models/IncomeDetails';
 import { Status } from './models/Status';
 import { Property} from './models/property';
 import { Loan } from './models/loan';
+import { Document } from './models/document';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,11 @@ export class CustomerService {
   loanSubmit(loanDetails: Loan) : Observable <any> {// modifications required
     let url = 'http://localhost:9292/loan-submit';
     return this.http.post<Status>(url, loanDetails);
+  }
+
+  documentSubmit(documentupload: Document) : Observable <any> {// modifications required
+    let url = 'http://localhost:9292/document-submit';
+    return this.http.post<Status>(url, documentupload);
   }
   
   trackApplication(applicationId: number) : Observable<Status> {
