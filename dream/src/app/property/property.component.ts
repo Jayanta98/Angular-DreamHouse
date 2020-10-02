@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Property } from '../models/property';
+import { CustomerService } from '../customer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-property',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PropertyComponent implements OnInit {
 
-  constructor() { }
+  model: any = {};
+  property: Property= new Property();
+
+  constructor(
+    private customerService: CustomerService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+    
   }
 
 }
