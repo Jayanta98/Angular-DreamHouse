@@ -12,6 +12,8 @@ import { ApplicationComponent } from './application/application.component';
 import { FormsModule } from '@angular/forms';
 import { MustMatchDirective } from './_helpers/must-match.directive';
 import { HttpClientModule } from '@angular/common/http';
+import { IncomeComponent } from './income/income.component';
+import { PropertyComponent } from './property/property.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     FaqComponent,
     ContactUSComponent,
     ApplicationComponent,
-    MustMatchDirective
+    MustMatchDirective,
+    IncomeComponent,
+    PropertyComponent
   ],
   imports: [
     BrowserModule,

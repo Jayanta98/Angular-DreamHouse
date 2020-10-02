@@ -1,0 +1,48 @@
+<!-- main app container -->
+<div class="card m-3">
+    <h5 class="card-header text-center text-danger">Income Form</h5>
+    <div class="card-body">
+        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+            <div class="form-row">
+  
+                <div class="form-group col-4">
+                    <label>Type of Employment</label>
+                    <input type="text" name="typeofemployment" class="form-control" [(ngModel)]="income.typeofemployment" #typeofemployment="ngModel" [ngClass]="{ 'is-invalid': f.submitted && typeofemployment.invalid }" required>
+                    <div *ngIf="f.submitted && typeofemployment.invalid" class="invalid-feedback">
+                        <div *ngIf="typeofemployment.errors.required">Type of Employment is required</div>
+                    </div>
+                </div>
+  
+                <div class="form-group col-4">
+                    <label>Type of Organization</label>
+                    <input type="text" name="organizationtype" class="form-control" [(ngModel)]="income.organizationtype" #organizationtype="ngModel" [ngClass]="{ 'is-invalid': f.submitted && organizationtype.invalid }" required>
+                    <div *ngIf="f.submitted && organizationtype.invalid" class="invalid-feedback">
+                        <div *ngIf="organizationtype.errors.required">Organization Type is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Employer Name</label>
+                <input type="text" name="employername" class="form-control" [(ngModel)]="income.employername" #employername="ngModel" [ngClass]="{ 'is-invalid': f.submitted && employername.invalid }" required >
+                <div *ngIf="f.submitted && employername.invalid" class="invalid-feedback">
+                    <div *ngIf="employername.errors.required">Employer Name is required</div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+              <label>Retirement Age</label>
+              <input type="text" name="retirementage" class="form-control" [(ngModel)]="income.retirementage" #retirementage="ngModel" [ngClass]="{ 'is-invalid': f.submitted && retirementage.invalid }" required >
+              <div *ngIf="f.submitted && retirementage.invalid" class="invalid-feedback">
+                  <div *ngIf="retirementage.errors.required">Retirement Age is required</div>
+              </div>
+          </div>
+  
+            <div class="text-center">
+                <button class="btn btn-primary mr-1">Register</button>
+                <button class="btn btn-secondary" type="reset">Cancel</button>
+            </div>
+        </form>
+    </div>
+  </div>
+  
+  
