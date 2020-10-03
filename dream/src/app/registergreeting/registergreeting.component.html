@@ -1,5 +1,5 @@
 <div class="container-fluid pt-3 m-1">
-   <h1 style="text-align: center; color:blue"> Congratulations!! {{name}}</h1>
+   <h1 style="text-align: center; color:blue"> Congratulations!! {{ name }}</h1>
 </div>
 
 
@@ -13,10 +13,10 @@
         <h3>You have successfully registered for Dream House</h3>
       </div>
       <div class="card-body">
-        <h5 class="card-title">Your Application Id is &nbsp;{{applicationId}}</h5>
-        <h5 class="card-title">Your Date of appointment is &nbsp; {{dateofappointment}}</h5>
+        <h5 class="card-title">Your Application Id is &nbsp;{{ applicationId }}</h5>
+        <h5 class="card-title">Your Date of appointment is &nbsp; {{ dateOfAppointment }}</h5>
         <p class="card-text text-danger">Please fill out rest of your information for further services.</p>
-        <a  [routerLink]="['/income']" class="btn btn-primary">GoTo Next</a>
+        <a [routerLink]="['/income']" class="btn btn-primary">GoTo Next</a>
       </div>
       <div class="card-footer text-muted">
 

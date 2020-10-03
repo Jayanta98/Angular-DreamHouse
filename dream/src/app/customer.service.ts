@@ -6,9 +6,8 @@ import { Application } from './models/Application';
 import { ApplicationSubmitStatus } from './models/ApplicationSubmitStatus';
 import { IncomeDetails } from './models/IncomeDetails';
 import { Status } from './models/Status';
-import { Property} from './models/property';
-import { Loan } from './models/loan';
-import { Document } from './models/document';
+import { PropertyDetails } from './models/PropertyDetails';
+import { LoanDetails } from './models/LoanDetails';
 
 @Injectable({
   providedIn: 'root'
@@ -27,19 +26,19 @@ export class CustomerService {
     return this.http.post<Status>(url, incomeDetails);
   }
 
-  propertySubmit(propertyDetails: Property) : Observable <any> {// modifications required
+  propertySubmit(propertyDetails: PropertyDetails) : Observable <Status> {
     let url = 'http://localhost:9292/property-submit';
     return this.http.post<Status>(url, propertyDetails);
   }
 
-  loanSubmit(loanDetails: Loan) : Observable <any> {// modifications required
+  loanSubmit(loanDetails: LoanDetails) : Observable <Status> {
     let url = 'http://localhost:9292/loan-submit';
     return this.http.post<Status>(url, loanDetails);
   }
 
-  documentSubmit(documentupload: Document) : Observable <any> {// modifications required
+  documentSubmit(formData: FormData) : Observable <Status> {// modifications required
     let url = 'http://localhost:9292/document-submit';
-    return this.http.post<Status>(url, documentupload);
+    return this.http.post<Status>(url, formData);
   }
   
   trackApplication(applicationId: number) : Observable<Status> {

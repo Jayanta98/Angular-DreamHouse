@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CustomerService } from '../customer.service';
-import { Loan } from '../models/loan';
+import { LoanDetails } from '../models/LoanDetails';
+import { Status } from '../models/Status';
 
 @Component({
   selector: 'app-loan',
@@ -10,8 +11,10 @@ import { Loan } from '../models/loan';
 })
 export class LoanComponent implements OnInit {
 
-  model={};
-  loan: Loan= new Loan();
+  // model={};
+  loanDetails: LoanDetails = new LoanDetails();
+  applicationId: any;
+  loanSubmitStatus: Status;
 
   constructor(
     private customerService: CustomerService,
@@ -19,10 +22,23 @@ export class LoanComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.applicationId = localStorage.getItem('applicationId');
   }
 
   onSubmit(){
+    this.loanDetails.applicationId = this.applicationId;
+    alert(JSON.stringify(this.loanDetails));
     
+    this.customerService.loanSubmit(this.loanDetails).subscribe(response => {
+      this.loanSubmitStatus = response;
+
+      alert(JSON.stringify(this.loanSubmitStatus));      
+      console.log(this.loanSubmitStatus.status);
+      
+      if(this.loanSubmitStatus.status == true) {
+        this.router.navigate(['/document']);
+      }
+    })
   }
 
 }

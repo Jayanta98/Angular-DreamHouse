@@ -29,11 +29,11 @@ const routes: Routes = [
   { path: 'error', component: ErrorComponent },
   { path: 'income', component: IncomeComponent },
   { path: 'property', component: PropertyComponent },
-  { path: 'loan', component:LoanComponent},
-  { path: 'document', component:DocumentComponent},
-  { path: 'login', component:LoginComponent},
-  { path: 'admin-login', component:AdminloginComponent},
-  { path: 'customer-login', component:CustomerloginComponent}
+  { path: 'loan', component:LoanComponent },
+  { path: 'document', component:DocumentComponent },
+  { path: 'login', component:LoginComponent },
+  { path: 'admin-login', component:AdminloginComponent },
+  { path: 'customer-login', component:CustomerloginComponent }
 ];
 
 @NgModule({

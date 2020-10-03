@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistergreetingComponent implements OnInit {
 
-  name: any;//return from backend
-  applicationId: any;//return from back end
-  dateofappointment: any;//return from backend
+  name: any; //return from backend
+  applicationId: any; //return from back end
+  dateOfAppointment: any; //return from backend
 
   constructor() { }
 
@@ -17,7 +17,7 @@ export class RegistergreetingComponent implements OnInit {
 
     this.name = localStorage.getItem('name');
     this.applicationId = localStorage.getItem('applicationId');
-    this.dateofappointment = localStorage.getItem('dateofappointment');//date in string format;
+    this.dateOfAppointment = localStorage.getItem('dateOfAppointment'); //date in string format;
     
   }
 

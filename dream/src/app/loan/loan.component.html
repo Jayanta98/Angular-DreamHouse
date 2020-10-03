@@ -8,7 +8,7 @@
 
                 <div class="form-group">
                     <label>Enter Loan Amount</label>
-                    <input type="number" name="loanamount" class="form-control" [(ngModel)]="loan.loanamount" #loanamount="ngModel" [ngClass]="{ 'is-invalid': f.submitted && loanamount.invalid }" required>
+                    <input type="number" name="loanamount" class="form-control" [(ngModel)]="loanDetails.loan.loanAmount" #loanamount="ngModel" [ngClass]="{ 'is-invalid': f.submitted && loanamount.invalid }" required>
                     <div *ngIf="f.submitted && loanamount.invalid" class="invalid-feedback">
                         <div *ngIf="loanamount.errors.required">Loan Amount is required</div>
                     </div>
@@ -16,7 +16,7 @@
 
                 <div class="form-group">
                     <label>Enter Tenure In Months</label>
-                    <input type="number" name="tenure" class="form-control" [(ngModel)]="loan.tenure" #tenure="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tenure.invalid }" required>
+                    <input type="number" name="tenure" class="form-control" [(ngModel)]="loanDetails.loan.tenure" #tenure="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tenure.invalid }" required>
                     <div *ngIf="f.submitted && tenure.invalid" class="invalid-feedback">
                         <div *ngIf="tenure.errors.required">Tenure is required</div>
                     </div>
@@ -24,7 +24,7 @@
 
             <div class="form-group">
                 <label>Enter Your Monthly Income </label>
-                <input type="number" name="custincome" class="form-control" [(ngModel)]="loan.custincome" #custincome="ngModel" [ngClass]="{ 'is-invalid': f.submitted && custincome.invalid }" required >
+                <input type="number" name="custincome" class="form-control" [(ngModel)]="loanDetails.loan.customerMonthlyIncome" #custincome="ngModel" [ngClass]="{ 'is-invalid': f.submitted && custincome.invalid }" required >
                 <div *ngIf="f.submitted && custincome.invalid" class="invalid-feedback">
                     <div *ngIf="custincome.errors.required">monthly income is required</div>
                 </div>

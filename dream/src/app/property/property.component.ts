@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { Property } from '../models/property';
-import { CustomerService } from '../customer.service';
 import { Router } from '@angular/router';
+import { PropertyDetails } from '../models/PropertyDetails';
+import { CustomerService } from '../customer.service';
+import { Status } from '../models/Status';
 
 @Component({
   selector: 'app-property',
   templateUrl: './property.component.html',
   styleUrls: ['./property.component.css']
 })
-export class PropertyComponent implements OnInit {
 
-  model: any = {};
-  property: Property= new Property();
+export class PropertyComponent implements OnInit {
+  // model: any = {};
+  propertyDetails: PropertyDetails = new PropertyDetails();
+  applicationId: any;
+  propertyStatus: Status;
 
   constructor(
     private customerService: CustomerService,
@@ -19,9 +22,22 @@ export class PropertyComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.applicationId = localStorage.getItem('applicationId');
   }
 
   onSubmit(){
+    this.propertyDetails.applicationId = this.applicationId;
+    alert(JSON.stringify(this.propertyDetails));
+
+    this.customerService.propertySubmit(this.propertyDetails).subscribe(response => {
+      this.propertyStatus = response;
+      alert(JSON.stringify(this.propertyStatus));
+
+      if(this.propertyStatus.status == true) {
+        this.router.navigate(['/loan']);
+      }
+    })
+
     
   }
 

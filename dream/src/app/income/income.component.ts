@@ -11,10 +11,10 @@ import { Status } from '../models/Status';
 })
 export class IncomeComponent implements OnInit {
 
-  model: any= {};
+  // model: any= {};
   incomeDetails: IncomeDetails = new IncomeDetails();
   applicationId: any;
-  appStatus: Status = new Status();
+  incomeStatus: Status;
 
 
   constructor(
@@ -23,20 +23,24 @@ export class IncomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.applicationId = localStorage.getItem("applicationId");
+    this.applicationId = localStorage.getItem('applicationId');
   }
 
   onSubmit(){
     this.incomeDetails.applicationId = this.applicationId;
     alert(JSON.stringify(this.incomeDetails));
+    
     this.customerService.incomeSubmit(this.incomeDetails).subscribe(response => {
-      this.appStatus = response;
-      alert(JSON.stringify(this.appStatus));      
+      this.incomeStatus = response;
+      
+      alert(JSON.stringify(this.incomeStatus));      
+      console.log(this.incomeStatus.status);
+      
+      if(this.incomeStatus.status == true) {
+        this.router.navigate(['/property']);
+      }
     })
-
-    if(this.appStatus.status == true) {
-      this.router.navigate(['/property']);
-    }
+    
   }
 
 }

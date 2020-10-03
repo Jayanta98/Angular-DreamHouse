@@ -8,7 +8,7 @@
 
                 <div class="form-group">
                     <label>Property Location</label>
-                    <input type="text" name="propertyLocation" class="form-control" [(ngModel)]="property.propertyLocation" #propertyLocation="ngModel" [ngClass]="{ 'is-invalid': f.submitted && propertyLocation.invalid }" required>
+                    <input type="text" name="propertyLocation" class="form-control" [(ngModel)]="propertyDetails.property.propertyLocation" #propertyLocation="ngModel" [ngClass]="{ 'is-invalid': f.submitted && propertyLocation.invalid }" required>
                     <div *ngIf="f.submitted && propertyLocation.invalid" class="invalid-feedback">
                         <div *ngIf="propertyLocation.errors.required">Property Location is required</div>
                     </div>
@@ -16,7 +16,7 @@
 
                 <div class="form-group">
                     <label>Property Name</label>
-                    <input type="text" name="propertyName" class="form-control" [(ngModel)]="property.propertyName" #propertyName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && propertyName.invalid }" required>
+                    <input type="text" name="propertyName" class="form-control" [(ngModel)]="propertyDetails.property.propertyName" #propertyName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && propertyName.invalid }" required>
                     <div *ngIf="f.submitted && propertyName.invalid" class="invalid-feedback">
                         <div *ngIf="propertyName.errors.required">Property Name is required</div>
                     </div>
@@ -24,7 +24,7 @@
 
             <div class="form-group">
                 <label>Estimated amount of property</label>
-                <input type="number" name="estimatedAmount" class="form-control" [(ngModel)]="property.estimatedAmount" #estimatedAmount="ngModel" [ngClass]="{ 'is-invalid': f.submitted && estimatedAmount.invalid }" required >
+                <input type="number" name="estimatedAmount" class="form-control" [(ngModel)]="propertyDetails.property.estimatedAmount" #estimatedAmount="ngModel" [ngClass]="{ 'is-invalid': f.submitted && estimatedAmount.invalid }" required >
                 <div *ngIf="f.submitted && estimatedAmount.invalid" class="invalid-feedback">
                     <div *ngIf="estimatedAmount.errors.required">Estimated Amount is required</div>
                 </div>
