@@ -27,20 +27,20 @@ export class IncomeComponent implements OnInit {
   }
 
   onSubmit(){
-    this.incomeDetails.applicationId = this.applicationId;
+    this.incomeDetails.applicationId = this.applicationId;//setting application Id
     alert(JSON.stringify(this.incomeDetails));
-    
+
     this.customerService.incomeSubmit(this.incomeDetails).subscribe(response => {
       this.incomeStatus = response;
-      
-      alert(JSON.stringify(this.incomeStatus));      
+
+      alert(JSON.stringify(this.incomeStatus));
       console.log(this.incomeStatus.status);
-      
+
       if(this.incomeStatus.status == true) {
         this.router.navigate(['/property']);
       }
     })
-    
+
   }
 
 }

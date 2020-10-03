@@ -39,23 +39,23 @@ export class DocumentComponent implements OnInit {
   }
 
   onVoterCardSelection(event) {
-    this.voterIdCard = event.target.files[0];
+    this.voterIdCard = event.target.files[1];
   }
-  
+
   onSalarySlipSelection(event) {
-    this.salarySlip = event.target.files[0];
+    this.salarySlip = event.target.files[2];
   }
 
   onLoaSelection(event) {
-    this.loa = event.target.files[0];
+    this.loa = event.target.files[3];
   }
 
   onNocSelection(event) {
-    this.nocFromBuilder = event.target.files[0];
+    this.nocFromBuilder = event.target.files[4];
   }
 
   onSaleAgreementSelection(event) {
-    this.agreementToSale = event.target.files[0];
+    this.agreementToSale = event.target.files[5];
   }
 
   onSubmit(){
@@ -63,11 +63,11 @@ export class DocumentComponent implements OnInit {
     let formData: FormData = new FormData();
     formData.append('applicationId', this.applicationId);
     formData.append('panCard', this.panCard);
-    formData.append('voterIdCard', this.panCard);
-    formData.append('salarySlip', this.panCard);
-    formData.append('loa', this.panCard);
-    formData.append('nocFromBuilder', this.panCard);
-    formData.append('agreementToSale', this.panCard);
+    formData.append('voterIdCard', this.voterIdCard);
+    formData.append('salarySlip', this.salarySlip);
+    formData.append('loa', this.loa);
+    formData.append('nocFromBuilder', this.nocFromBuilder);
+    formData.append('agreementToSale', this.agreementToSale);
 
     console.log(formData);
 
