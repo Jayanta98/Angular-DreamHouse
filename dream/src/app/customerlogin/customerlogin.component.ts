@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Customerlogin } from '../models/customerlogin';
 import { CustomerService } from '../customer.service';
-import { Loginstatus } from '../models/loginstatus';
+import { UserLoginStatus } from '../models/UserLoginStatus';
+import { UserLogin } from '../models/UserLogin';
 
 @Component({
   selector: 'app-customerlogin',
@@ -12,25 +13,33 @@ import { Loginstatus } from '../models/loginstatus';
 export class CustomerloginComponent implements OnInit {
 
   model: any = {};
-  cutomerlogin: Customerlogin = new Customerlogin();
-  loginStatus: Loginstatus;
+  userlogin: UserLogin = new UserLogin();
+  userLoginStatus: UserLoginStatus;
 
-  constructor(private customerService: CustomerService,private router: Router) { }
+  constructor(
+    private customerService: CustomerService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
-  customerLogin(){
+  onSubmit(){
+    alert(JSON.stringify(this.userlogin));
+    
+    this.customerService.customerLogin(this.userlogin).subscribe(response => {
+      this.userLoginStatus = response;
 
-    //some function to be included
-
-    if(this.loginStatus.status==true){
-      sessionStorage.setItem("customeremail",this.cutomerlogin.customeremail);//modification required
-      sessionStorage.setItem("customerpassword",this.cutomerlogin.customerpassword);
-      this.router.navigate(['/on-customerlogin']);
-    }else{
-      this.router.navigate(['/error']);
-    }
+      if(this.userLoginStatus.status == true){
+        sessionStorage.setItem('customerName', String(this.userLoginStatus.name));
+        sessionStorage.setItem('applicationId', String(this.userLoginStatus.applicationId));
+        sessionStorage.setItem('applicationStatus', String(this.userLoginStatus.applicationStatus));
+        this.router.navigate(['/customer-dashboard']);
+      }
+      else {
+        this.router.navigate(['/error']);
+      }
+    })
 
   }
 

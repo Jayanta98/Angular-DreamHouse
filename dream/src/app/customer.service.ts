@@ -8,6 +8,8 @@ import { IncomeDetails } from './models/IncomeDetails';
 import { Status } from './models/Status';
 import { PropertyDetails } from './models/PropertyDetails';
 import { LoanDetails } from './models/LoanDetails';
+import { UserLogin } from './models/UserLogin';
+import { UserLoginStatus } from './models/UserLoginStatus';
 
 @Injectable({
   providedIn: 'root'
@@ -44,5 +46,10 @@ export class CustomerService {
   trackApplication(applicationId: number) : Observable<Status> {
     let url = 'http://localhost:9292/track?applicationId='+applicationId;
     return this.http.get<Status>(url);
+  }
+
+  customerLogin(userLogin: UserLogin) : Observable<UserLoginStatus> {
+    let url = 'http://localhost:9292/user-login';
+    return this.http.post<UserLoginStatus>(url, userLogin);
   }
 }

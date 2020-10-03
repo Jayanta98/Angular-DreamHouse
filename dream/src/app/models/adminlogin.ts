@@ -1,4 +1,4 @@
-export class Adminlogin {
-    adminname: string;
-    adminpassword : string;
+export class AdminLogin {
+    username: string;
+    password : string;
 }
