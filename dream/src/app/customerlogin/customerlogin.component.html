@@ -1,1 +1,19 @@
-<p>customerlogin works!</p>
+<div class="p-3 m-3">
+    <div class="jumbotron p-4 m-4">
+      <h1 class="display-4"> Customer Login Page</h1>
+    </div>
+    <div class=" container text-center w-50 h-200px">
+      <form  (ngSubmit)="adminlogin()">
+        <div class="imgcontainer">
+          <img src="assets/images/tjpg.jpg"  class="avatar"><!--put image here-->
+        </div>
+    
+        <div class="container">
+          <label for="uname"><b>Enter Your credentials to login</b></label>
+          <input type="text" placeholder="Enter you email address" name="customeremail" [(ngModel)]="customeremail" required>
+          <input type="password" placeholder="Enter Password" name="customerpassword" [(ngModel)]="customerpassword" required>  
+          <button class="mybtn" type="submit">Login</button>
+    
+        </div>
+      </form>
+    </div>

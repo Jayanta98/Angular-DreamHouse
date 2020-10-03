@@ -1,1 +1,22 @@
-<p>adminlogin works!</p>
+
+<div class="p-3 m-3">
+<div class="jumbotron p-4 m-4">
+  <h1 class="display-4"> Admin Login Page</h1>
+</div>
+<div class=" container text-center w-50 h-200px">
+  <form  (ngSubmit)="adminlogin()">
+    <div class="imgcontainer">
+      <img src="assets/images/tjpg.jpg"  class="avatar"><!--put image here-->
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Enter your credentials to login</b></label>
+      <input type="text" placeholder="Enter User Name" name="adminname" [(ngModel)]="adminname" required>
+      <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="adminpassword" required>  
+      <button class="mybtn" type="submit">Login</button>
+
+    </div>
+  </form>
+</div>
+
+
