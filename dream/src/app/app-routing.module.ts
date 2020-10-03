@@ -38,6 +38,8 @@ const routes: Routes = [
   { path: 'customer-login', component: CustomerloginComponent },
   { path: 'admin-dashboard', component: AdmindashboardComponent },
   { path: 'customer-dashboard', component: CustomerdashboardComponent }
+
+
 ];
 
 @NgModule({

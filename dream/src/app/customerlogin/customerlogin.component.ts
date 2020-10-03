@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Customerlogin } from '../models/customerlogin';
+
 import { CustomerService } from '../customer.service';
 import { UserLoginStatus } from '../models/UserLoginStatus';
 import { UserLogin } from '../models/UserLogin';
@@ -26,7 +26,7 @@ export class CustomerloginComponent implements OnInit {
 
   onSubmit(){
     alert(JSON.stringify(this.userlogin));
-    
+
     this.customerService.customerLogin(this.userlogin).subscribe(response => {
       this.userLoginStatus = response;
 

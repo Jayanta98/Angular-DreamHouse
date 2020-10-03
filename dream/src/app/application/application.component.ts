@@ -18,7 +18,7 @@ export class ApplicationComponent implements OnInit {
 
   constructor(
     private customerService: CustomerService,
-    private router: Router, 
+    private router: Router,
     private datePipe: DatePipe
   ) { }
 
@@ -35,17 +35,19 @@ export class ApplicationComponent implements OnInit {
       console.log(response.applicationId);
       console.log(response.name);
       console.log(response.dateOfAppointment)
-    
+
       this.registeringStatus=response;
 
       alert(JSON.stringify(this.registeringStatus))   //need to create an registeringStatus----> this.regsteringStatus=response;
       console.log(this.registeringStatus.dateOfAppointment);
-      
+
       if(this.registeringStatus.status == true){
         localStorage.setItem('name', String(response.name));
         localStorage.setItem('applicationId', String(response.applicationId));
         localStorage.setItem('dateofappointment', this.datePipe.transform(response.dateOfAppointment, "yyyy-MM-dd"));
+        alert("Hi");
         this.router.navigate(['/on-register']);
+        alert("ok end");
       }
       else{
         this.router.navigate(['/error']);
