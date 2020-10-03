@@ -15,6 +15,8 @@ import { DocumentComponent } from './document/document.component';
 import { LoginComponent } from './login/login.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { CustomerloginComponent } from './customerlogin/customerlogin.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
 
 
 const routes: Routes = [
@@ -33,7 +35,9 @@ const routes: Routes = [
   { path: 'document', component:DocumentComponent},
   { path: 'login', component:LoginComponent},
   { path: 'admin-login', component:AdminloginComponent},
-  { path: 'customer-login', component:CustomerloginComponent}
+  { path: 'customer-login', component:CustomerloginComponent},
+  { path: 'on-adminlogin', component:AdmindashboardComponent},
+  { path: 'on-customerlogin', component:CustomerdashboardComponent}
 ];
 
 @NgModule({
