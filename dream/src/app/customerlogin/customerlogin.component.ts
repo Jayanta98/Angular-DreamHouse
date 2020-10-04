@@ -37,7 +37,7 @@ export class CustomerloginComponent implements OnInit {
         this.router.navigate(['/customer-dashboard']);
       }
       else {
-        this.router.navigate(['/error']);
+        this.router.navigate(['/login-error']);
       }
     })
 

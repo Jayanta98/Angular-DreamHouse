@@ -17,6 +17,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { CustomerloginComponent } from './customerlogin/customerlogin.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
+import { LoginErrorComponent } from './login-error/login-error.component';
 
 
 const routes: Routes = [
@@ -37,7 +38,8 @@ const routes: Routes = [
   { path: 'admin-login', component: AdminloginComponent },
   { path: 'customer-login', component: CustomerloginComponent },
   { path: 'admin-dashboard', component: AdmindashboardComponent },
-  { path: 'customer-dashboard', component: CustomerdashboardComponent }
+  { path: 'customer-dashboard', component: CustomerdashboardComponent },
+  { path: 'login-error', component: LoginErrorComponent },
 
 
 ];

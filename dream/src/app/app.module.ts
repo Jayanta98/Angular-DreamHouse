@@ -24,6 +24,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { CustomerloginComponent } from './customerlogin/customerlogin.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
+import { LoginErrorComponent } from './login-error/login-error.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { CustomerdashboardComponent } from './customerdashboard/customerdashboar
     AdminloginComponent,
     CustomerloginComponent,
     AdmindashboardComponent,
-    CustomerdashboardComponent
+    CustomerdashboardComponent,
+    LoginErrorComponent
   ],
   imports: [
     BrowserModule,
