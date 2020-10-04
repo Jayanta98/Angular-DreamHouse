@@ -18,6 +18,9 @@ import { CustomerloginComponent } from './customerlogin/customerlogin.component'
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
 import { LoginErrorComponent } from './login-error/login-error.component';
+import { AdminViewComponent } from './admin-view/admin-view.component';
+import { AdminCreateComponent } from './admin-create/admin-create.component';
+import { AdminUpdateComponent } from './admin-update/admin-update.component';
 
 
 const routes: Routes = [
@@ -37,7 +40,15 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'admin-login', component: AdminloginComponent },
   { path: 'customer-login', component: CustomerloginComponent },
-  { path: 'admin-dashboard', component: AdmindashboardComponent },
+
+  { path: 'admin-dashboard', component: AdmindashboardComponent ,
+  children: [
+    { path: 'admin-view', component: AdminViewComponent },
+    { path: 'admin-create', component: AdminCreateComponent },
+    { path: 'admin-update', component: AdminUpdateComponent },
+  ]
+},
+
   { path: 'customer-dashboard', component: CustomerdashboardComponent },
   { path: 'login-error', component: LoginErrorComponent },
 

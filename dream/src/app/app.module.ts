@@ -25,6 +25,9 @@ import { CustomerloginComponent } from './customerlogin/customerlogin.component'
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
 import { LoginErrorComponent } from './login-error/login-error.component';
+import { AdminViewComponent } from './admin-view/admin-view.component';
+import { AdminCreateComponent } from './admin-create/admin-create.component';
+import { AdminUpdateComponent } from './admin-update/admin-update.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,13 @@ import { LoginErrorComponent } from './login-error/login-error.component';
     CustomerloginComponent,
     AdmindashboardComponent,
     CustomerdashboardComponent,
-    LoginErrorComponent
+    LoginErrorComponent,
+
+    AdminViewComponent,
+
+    AdminCreateComponent,
+
+    AdminUpdateComponent
   ],
   imports: [
     BrowserModule,
