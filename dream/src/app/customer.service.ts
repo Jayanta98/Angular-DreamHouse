@@ -44,7 +44,7 @@ export class CustomerService {
     let url = 'http://localhost:9292/document-submit';
     return this.http.post<Status>(url, formData);
   }
-  
+
   trackApplication(applicationId: number) : Observable<Status> {
     let url = 'http://localhost:9292/track?applicationId='+applicationId;
     return this.http.get<Status>(url);
@@ -60,8 +60,8 @@ export class CustomerService {
     return this.http.get<Application>(url);
   }
 
-  getAccountdetails(applicationId: number) : Observable<Accountdetail>{
-    let url = 'http://localhost:9292/accountdetails?applicationId='+applicationId;
+  getAccountdetails(accountNo: number) : Observable<Accountdetail>{
+    let url = 'http://localhost:9292/accountdetails?accountNo='+accountNo;
     return this.http.get<Accountdetail>(url);
   }
 
