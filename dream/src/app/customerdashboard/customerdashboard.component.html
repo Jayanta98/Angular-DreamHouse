@@ -10,5 +10,46 @@
 
 
 <!--Make Two angular Form One for Application Tracker and One for Account Tracker-->
+<div class="p-3 m-3">
+    <div class="jumbotron p-4 m-4">
+      <h1 class="display-4"> Application Tracker</h1>
+    </div>
+    
+    <div class=" container text-center w-50 h-200px">
+      <form  (ngSubmit)="onApplicationSubmit()">
+        <div class="imgcontainer">
+          <img src="assets/images/pm.png"  class="avatar">
+        </div>
+    
+        <div class="container">
+          <label for="applicationId"><b>Enter your Application No</b></label>
+          <input type="text" placeholder="Enter Application No" name="applicationId" [(ngModel)]="applicationId" required>  
+          <button class="mybtn" type="submit">Submit</button>
+        </div>
+        
+      </form>
+    </div>
 
+</div>
 
+<div class="p-3 m-3">
+    <div class="jumbotron p-4 m-4">
+      <h1 class="display-4"> Account Tracker</h1>
+    </div>
+    
+    <div class=" container text-center w-50 h-200px">
+      <form  (ngSubmit)="onAccountSubmit()">
+        <div class="imgcontainer">
+          <img src="assets/images/pm.png"  class="avatar">
+        </div>
+    
+        <div class="container">
+          <label for="accountNo"><b>Enter your Account No</b></label>
+          <input type="text" placeholder="Enter Account No" name="accountNo" [(ngModel)]="accountNo" required>  
+          <button class="mybtn" type="submit">Submit</button>
+        </div>
+        
+      </form>
+    </div>
+
+</div>

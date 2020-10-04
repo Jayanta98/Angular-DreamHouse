@@ -21,7 +21,7 @@ export class TrackerComponent implements OnInit {
     this.customerService.trackApplication(this.applicationId).subscribe(response => {
 
       this.appStatus = response;
-
+      
       alert(JSON.stringify(this.appStatus));
       console.log(this.appStatus.status);
       console.log(this.appStatus.statusMessage);

@@ -10,6 +10,8 @@ import { PropertyDetails } from './models/PropertyDetails';
 import { LoanDetails } from './models/LoanDetails';
 import { UserLogin } from './models/UserLogin';
 import { UserLoginStatus } from './models/UserLoginStatus';
+import { Account } from './models/account';
+import { Accountdetail } from './models/accountdetail';
 
 @Injectable({
   providedIn: 'root'
@@ -52,4 +54,15 @@ export class CustomerService {
     let url = 'http://localhost:9292/user-login';
     return this.http.post<UserLoginStatus>(url, userLogin);
   }
+
+  getApplicationdetails(applicationId: number) : Observable<Application> {
+    let url = 'http://localhost:9292/applicationdetails?applicationId='+applicationId;
+    return this.http.get<Application>(url);
+  }
+
+  getAccountdetails(applicationId: number) : Observable<Accountdetail>{
+    let url = 'http://localhost:9292/accountdetails?applicationId='+applicationId;
+    return this.http.get<Accountdetail>(url);
+  }
+
 }
