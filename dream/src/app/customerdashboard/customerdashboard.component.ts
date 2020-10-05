@@ -26,7 +26,7 @@ export class CustomerdashboardComponent implements OnInit {
   onApplicationSubmit(){
     this.customerService.getApplicationdetails(this.applicationId).subscribe(response =>{
       this.application = response;
-      alert(JSON.stringify(this.application));
+      alert(JSON.stringify(response));
       if(this.application==null){
         this.router.navigate(['/error'])
       }else{
