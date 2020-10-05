@@ -47,7 +47,7 @@ export class CustomerdashboardComponent implements OnInit {
       this.acdetail = response;
 
       alert(JSON.stringify(this.acdetail));
-      
+
       if(this.acdetail.accountStatus==true){
         console.log(this.acdetail.accountStatus);
         // this.router.navigate(['/']);

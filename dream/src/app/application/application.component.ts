@@ -15,7 +15,7 @@ export class ApplicationComponent implements OnInit {
   model: any = {};
   application: Application = new Application();
   registeringStatus: ApplicationSubmitStatus;
-
+mydate:string;
   constructor(
     private customerService: CustomerService,
     private router: Router,
@@ -23,6 +23,7 @@ export class ApplicationComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    //this.application.firstname="Jayanta";
   }
 
   onSubmit() {
@@ -44,10 +45,12 @@ export class ApplicationComponent implements OnInit {
       if(this.registeringStatus.status == true){
         localStorage.setItem('name', String(response.name));
         localStorage.setItem('applicationId', String(response.applicationId));
-        localStorage.setItem('dateofappointment', this.datePipe.transform(response.dateOfAppointment, "yyyy-MM-dd"));
-        alert("Hi");
+        alert(response.dateOfAppointment);
+       this.mydate=String(response.dateOfAppointment);
+        localStorage.setItem('dateofappointment', this.mydate);
+
         this.router.navigate(['/on-register']);
-        alert("ok end");
+
       }
       else{
         this.router.navigate(['/error']);

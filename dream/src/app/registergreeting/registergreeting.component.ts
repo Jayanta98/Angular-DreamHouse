@@ -17,8 +17,8 @@ export class RegistergreetingComponent implements OnInit {
 
     this.name = localStorage.getItem('name');
     this.applicationId = localStorage.getItem('applicationId');
-    this.dateOfAppointment = localStorage.getItem('dateOfAppointment'); //date in string format;
-    
+    this.dateOfAppointment = localStorage.getItem('dateofappointment'); //date in string format;
+
   }
 
 }
