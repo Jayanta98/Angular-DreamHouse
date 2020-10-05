@@ -12,6 +12,7 @@ import { UserLogin } from './models/UserLogin';
 import { UserLoginStatus } from './models/UserLoginStatus';
 import { Account } from './models/account';
 import { Accountdetail } from './models/accountdetail';
+import { Applicationdetail } from './models/applicationdetail';
 
 @Injectable({
   providedIn: 'root'
