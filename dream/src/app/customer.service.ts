@@ -44,7 +44,7 @@ export class CustomerService {
     let url = 'http://localhost:9292/document-submit';
     return this.http.post<Status>(url, formData);
   }
-  
+
   trackApplication(applicationId: number) : Observable<Status> {
     let url = 'http://localhost:9292/track?applicationId='+applicationId;
     return this.http.get<Status>(url);
