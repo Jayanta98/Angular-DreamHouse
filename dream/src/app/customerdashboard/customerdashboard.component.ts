@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../customer.service';
 import { Router } from '@angular/router';
-import { Application } from '../models/Application';
 import { Accountdetail } from '../models/accountdetail';
+import { Applicationdetail} from '../models/applicationdetail';
 import { identifierModuleUrl } from '@angular/compiler';
 
 
@@ -15,7 +15,7 @@ export class CustomerdashboardComponent implements OnInit {
 
   applicationId: number;
   accountNo: number;
-  application: Application = new Application();
+  appdetail: Applicationdetail = new Applicationdetail();
   acdetail: Accountdetail= new Accountdetail();
 
   constructor(private customerService: CustomerService,private router: Router) { }
@@ -25,13 +25,14 @@ export class CustomerdashboardComponent implements OnInit {
 
   onApplicationSubmit(){
     this.customerService.getApplicationdetails(this.applicationId).subscribe(response =>{
-      this.application = response;
-      alert(JSON.stringify(response));
-      if(this.application==null){
-        this.router.navigate(['/error'])
+      this.appdetail = response;
+      alert(JSON.stringify(this.appdetail));
+      if(this.appdetail.applicationStatus==true){
+        console.log(this.appdetail.application);
+
+        this.router.navigate(['/'])
       }else{
-        console.log(this.application);
-        this.router.navigate(['/']);
+        this.router.navigate(['/error']);
       }
     })
   }

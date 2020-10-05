@@ -55,9 +55,9 @@ export class CustomerService {
     return this.http.post<UserLoginStatus>(url, userLogin);
   }
 
-  getApplicationdetails(applicationId: number) : Observable<Application> {
+  getApplicationdetails(applicationId: number) : Observable<Applicationdetail> {
     let url = 'http://localhost:9292/applicationdetails?applicationId='+applicationId;
-    return this.http.get<Application>(url);
+    return this.http.get<Applicationdetail>(url);
   }
 
   getAccountdetails(accountNo: number) : Observable<Accountdetail>{
