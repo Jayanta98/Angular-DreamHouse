@@ -1,5 +1,10 @@
-import { Account } from '../models/account';
 export class Accountdetail {
-    account: Account;
-    accountstatus: boolean;
+    firstName: string;
+    lastName: string;
+    accountType: string;
+    ifscCode: string;
+    branchCode: string;
+    branchName: string;
+    statusMessage: string
+    accountStatus: boolean;
 }
