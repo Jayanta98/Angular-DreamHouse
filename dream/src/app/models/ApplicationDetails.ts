@@ -10,6 +10,7 @@ export class ApplicationDetails {
 	panNo: string;
 	dateOfAppointment: string;
 	applicationStatusMessage: string;
+	accountNo: number;
 	status: boolean;
 
 }
