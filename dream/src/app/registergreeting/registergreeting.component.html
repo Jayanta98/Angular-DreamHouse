@@ -16,7 +16,7 @@
         <h5 class="card-title">Your Application ID is &nbsp;{{ applicationId }}</h5>
         <h5 class="card-title">Your Date of appointment is &nbsp; {{ dateOfAppointment }}</h5>
         <p class="card-text text-danger">Please fill out rest of your information for further services.</p>
-        <a [routerLink]="['/income']" class="btn btn-primary">GoTo Next</a>
+       <!--<a [routerLink]="['/income']" class="btn btn-primary">GoTo Next</a>-->
       </div>
       <div class="card-footer text-muted">
 
@@ -25,4 +25,14 @@
   </div>
 </div>
 
+<div class="container-fluid pt-1 mt-1">
+  <h3 style="text-align: center; color:rgb(255, 0, 179)"> To Complete Your Application You have to go through this process.</h3>
+</div>
 
+<div class="text-center" >
+  <img src="assets/images/lflow.PNG" >
+
+ </div>
+ <div class="text-center">
+  <a [routerLink]="['/gate']" class="btn btn-primary">GoTo Apply</a>
+ </div>

@@ -21,6 +21,8 @@ import { LoginErrorComponent } from './login-error/login-error.component';
 import { AdminViewComponent } from './admin-view/admin-view.component';
 import { AdminCreateComponent } from './admin-create/admin-create.component';
 import { AdminUpdateComponent } from './admin-update/admin-update.component';
+import { ApplyGateComponent } from './apply-gate/apply-gate.component';
+
 
 
 const routes: Routes = [
@@ -40,6 +42,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'admin-login', component: AdminloginComponent },
   { path: 'customer-login', component: CustomerloginComponent },
+  { path: 'gate', component: ApplyGateComponent },
 
   { path: 'admin-dashboard', component: AdmindashboardComponent ,
   children: [

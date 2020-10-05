@@ -28,6 +28,7 @@ import { LoginErrorComponent } from './login-error/login-error.component';
 import { AdminViewComponent } from './admin-view/admin-view.component';
 import { AdminCreateComponent } from './admin-create/admin-create.component';
 import { AdminUpdateComponent } from './admin-update/admin-update.component';
+import { ApplyGateComponent } from './apply-gate/apply-gate.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,9 @@ import { AdminUpdateComponent } from './admin-update/admin-update.component';
 
     AdminCreateComponent,
 
-    AdminUpdateComponent
+    AdminUpdateComponent,
+
+    ApplyGateComponent
   ],
   imports: [
     BrowserModule,
