@@ -12,7 +12,9 @@ import { UserLogin } from './models/UserLogin';
 import { UserLoginStatus } from './models/UserLoginStatus';
 import { Account } from './models/account';
 import { Accountdetail } from './models/accountdetail';
-import { Applicationdetail } from './models/applicationdetail';
+
+import { ApplicationDetails } from './models/ApplicationDetails'
+
 
 @Injectable({
   providedIn: 'root'
@@ -56,9 +58,9 @@ export class CustomerService {
     return this.http.post<UserLoginStatus>(url, userLogin);
   }
 
-  getApplicationdetails(applicationId: number) : Observable<Applicationdetail> {
+  getApplicationdetails(applicationId: number) : Observable<ApplicationDetails> {
     let url = 'http://localhost:9292/applicationdetails?applicationId='+applicationId;
-    return this.http.get<Applicationdetail>(url);
+    return this.http.get<ApplicationDetails>(url);
   }
 
   getAccountdetails(accountNo: number) : Observable<Accountdetail>{
