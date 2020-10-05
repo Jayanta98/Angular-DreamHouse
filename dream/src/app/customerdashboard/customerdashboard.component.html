@@ -5,14 +5,14 @@
 
 </div>
 
-<h1 class="text-center " style="color: #ff5e00;">Hi , Welcome To Customer-DashBoard</h1>
+<h1 class="text-center " style="color: #ff5e00;">Hi {{name}}, Welcome To Customer-DashBoard</h1>
 
 
 
 <!--Make Two angular Form One for Application Tracker and One for Account Tracker-->
 <div class="p-3 m-3">
     <div class="jumbotron p-4 m-4">
-      <h1 class="display-4"> Application Tracker</h1>
+      <h1 class="display-4"> Application Tracker :</h1>
     </div>
 
     <div class=" container text-center w-50 h-200px">
@@ -22,7 +22,7 @@
         </div>
 
         <div class="container">
-          <label for="applicationId"><b>Enter your Application No</b></label>
+          <label for="applicationId"><b>Enter your Application No:</b></label>
           <input type="number" placeholder="Enter Application No" name="applicationId" [(ngModel)]="applicationId" required>
           <button class="mybtn" type="submit">Submit</button>
         </div>

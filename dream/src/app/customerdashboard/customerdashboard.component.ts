@@ -17,6 +17,7 @@ export class CustomerdashboardComponent implements OnInit {
   accountNo: number;
   appdetail: ApplicationDetails = new ApplicationDetails();
   acdetail: Accountdetail = new Accountdetail();
+  name:string;
 
   constructor(
     private customerService: CustomerService,
@@ -24,6 +25,7 @@ export class CustomerdashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.name=sessionStorage.getItem('customerName');
   }
 
   onApplicationSubmit(){
