@@ -23,14 +23,14 @@
 
 
  <div class=" container text-center w-50 h-50px">
-  <form  >
+  <form (ngSubmit)="trackForm()">
     <div class="imgcontainer">
       <img src="assets/images/api.jpg"  class="avatar">
     </div>
 
     <div class="container">
       <label for="uname"><b>GoTo Pending Application Section</b></label>
-      <input type="text" placeholder="Enter Application Number" name="applicationNo" required>
+      <input type="text" placeholder="Enter Application Number" name="applicationNo" [(ngModel)]="applicationId" required>
 
       <button class="mybtn" type="submit">GoTo</button>
 

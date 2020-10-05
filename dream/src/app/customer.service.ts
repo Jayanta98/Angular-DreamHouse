@@ -12,8 +12,8 @@ import { UserLogin } from './models/UserLogin';
 import { UserLoginStatus } from './models/UserLoginStatus';
 import { Account } from './models/account';
 import { Accountdetail } from './models/accountdetail';
-
 import { ApplicationDetails } from './models/ApplicationDetails'
+import { FormStatus } from './models/FormStatus';
 
 
 @Injectable({
@@ -66,6 +66,11 @@ export class CustomerService {
   getAccountdetails(accountNo: number) : Observable<Accountdetail>{
     let url = 'http://localhost:9292/accountdetails?accountNo='+accountNo;
     return this.http.get<Accountdetail>(url);
+  }
+
+  formTrack(applicationId: number) : Observable<FormStatus> {
+    let url = 'http://localhost:9292/trackForm?applicationId='+applicationId;
+    return this.http.get<FormStatus>(url);
   }
 
 }
