@@ -22,6 +22,7 @@ import { AdminViewComponent } from './admin-view/admin-view.component';
 import { AdminCreateComponent } from './admin-create/admin-create.component';
 import { AdminUpdateComponent } from './admin-update/admin-update.component';
 import { ApplyGateComponent } from './apply-gate/apply-gate.component';
+import { AdminErrorComponent } from './admin-error/admin-error.component';
 
 
 
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: 'admin-login', component: AdminloginComponent },
   { path: 'customer-login', component: CustomerloginComponent },
   { path: 'gate', component: ApplyGateComponent },
+  { path: 'errorby-admin', component: AdminErrorComponent },
 
   { path: 'admin-dashboard', component: AdmindashboardComponent ,
   children: [

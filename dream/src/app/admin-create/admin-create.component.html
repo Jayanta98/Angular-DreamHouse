@@ -1,3 +1,55 @@
+<!--Make Two angular Form One for Application Tracker and One for Account Tracker-->
+
+
+
+<!--Make Two angular Form One for Application Tracker and One for Account Tracker-->
+<div class="p-3 m-3">
+  <div class="jumbotron p-4 m-4">
+    <h1 class="display-4"> Application Tracker :</h1>
+  </div>
+
+  <div class=" container text-center w-50 h-200px">
+    <form  (ngSubmit)="onApplicationSubmit()">
+      <div class="imgcontainer">
+        <img src="assets/images/app.png"  class="avatar">
+      </div>
+
+      <div class="container">
+        <label for="appId"><b>Enter Customer Application No:</b></label>
+        <input type="number" placeholder="Enter Application No" name="appId" [(ngModel)]="appId" required>
+        <button class="mybtn" type="submit">Submit</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+
+
+
+<div class="p-3">
+  <div class="p-4 m-4">
+    <div class="card text-center">
+      <div class="card-header">
+        <h3 class="text-danger">Customer Details Window</h3>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Customer Application ID is &nbsp;{{ accDetailsByAdmin.applicationId }}</h5>
+        <h5 class="card-title">Customer Full Name is  &nbsp;{{ accDetailsByAdmin.account.firstName }}  &nbsp;{{ accDetailsByAdmin.account.middleName }} &nbsp;{{ accDetailsByAdmin.account.lastName }} </h5>
+        <h5 class="card-title">Customer Email is &nbsp; {{ custEmail }}</h5>
+        <h5 class="card-title">Customer Application Status is &nbsp; {{ applicationStatus }}</h5>
+        <h5 class="card-title">Customer Loan Account No &nbsp; {{ accNumber }}</h5>
+        <h5 class="card-title">Customer Account Type &nbsp; {{ accDetailsByAdmin.account.accountType}}</h5>
+        <h5 class="card-title">Customer Loan Amount &nbsp; {{  this.accDetailsByAdmin.account.amount }}</h5>
+        <p class="card-text text-danger">If Loan Account Number shows 0 ,It means Account is Not Created</p>
+       <!--<a [routerLink]="['/income']" class="btn btn-primary">GoTo Next</a>-->
+      </div>
+      <div class="card-footer text-muted">
+
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- main app container -->
 <div style="width: 900px; margin-left:250px">
