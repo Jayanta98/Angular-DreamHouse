@@ -77,4 +77,25 @@ export class AdminService {
     return this.http.get<LoanFields>(url);
   }
 
+
+
+
+
+
+
+
+
+
+
+
+  getLoanDetailsForAdmin(applicationId: number):Observable<LoanDetailsForAdmin>{
+    let url = 'http://localhost:9292/loanDetailsforAdmin?applicationId='+applicationId;
+    return this.http.get<LoanDetailsForAdmin>(url);
+  }
+
+  updateLoanTableByAdmin(  loanDetailsforadmin:LoanDetailsForAdmin):Observable<Status>{
+    let url = 'http://localhost:9292/update-loanByadmin';
+   return this.http.post<Status>(url,loanDetailsforadmin);
+  }
+
 }
