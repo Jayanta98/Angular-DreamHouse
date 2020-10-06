@@ -1,6 +1,6 @@
-import { MyAccount } from './MyAccount';
+import { Account } from './Account';
 export class CreateAccountDetailsByAdmin {
   applicationId:number;
-  account: MyAccount=new MyAccount();
+  account: Account = new Account();
 
 }

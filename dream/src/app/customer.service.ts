@@ -10,7 +10,6 @@ import { PropertyDetails } from './models/PropertyDetails';
 import { LoanDetails } from './models/LoanDetails';
 import { UserLogin } from './models/UserLogin';
 import { UserLoginStatus } from './models/UserLoginStatus';
-import { Account } from './models/account';
 import { Accountdetail } from './models/accountdetail';
 import { ApplicationDetails } from './models/ApplicationDetails'
 import { FormStatus } from './models/FormStatus';

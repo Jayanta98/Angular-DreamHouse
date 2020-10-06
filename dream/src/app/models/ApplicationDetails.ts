@@ -1,9 +1,8 @@
 export class ApplicationDetails {
 
-
-  firstname: string;
-  lastname: string;
-  middlename:string;
+	firstname: string;
+	lastname: string;
+	middlename:string;
 	applicationId: number;
 	email: string;
 	phoneNo: string;
@@ -13,9 +12,11 @@ export class ApplicationDetails {
 	panNo: string;
 	dateOfAppointment: string;
 	applicationStatusMessage: string;
+
   accountNo: number;
    ammount:number;
    accountType:string;
+
 	status: boolean;
 
 }
