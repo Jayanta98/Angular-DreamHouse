@@ -2,6 +2,7 @@ export class ApplicationDetails {
 
     firstname: string;
 	lastname: string;
+	applicationId: number;
 	email: string;
 	phoneNo: string;
 	dateOfBirth: string;
