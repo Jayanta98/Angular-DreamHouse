@@ -39,23 +39,23 @@ export class DocumentComponent implements OnInit {
   }
 
   onVoterCardSelection(event) {
-    this.voterIdCard = event.target.files[1];
+    this.voterIdCard = event.target.files[0];
   }
 
   onSalarySlipSelection(event) {
-    this.salarySlip = event.target.files[2];
+    this.salarySlip = event.target.files[0];
   }
 
   onLoaSelection(event) {
-    this.loa = event.target.files[3];
+    this.loa = event.target.files[0];
   }
 
   onNocSelection(event) {
-    this.nocFromBuilder = event.target.files[4];
+    this.nocFromBuilder = event.target.files[0];
   }
 
   onSaleAgreementSelection(event) {
-    this.agreementToSale = event.target.files[5];
+    this.agreementToSale = event.target.files[0];
   }
 
   onSubmit(){
