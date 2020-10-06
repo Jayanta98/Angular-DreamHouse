@@ -4,4 +4,6 @@ export class IncomeFields {
     organizationType: number;
     employerName: number;
     applicationId: number;
+    status: boolean;
+    statusMessage: string;
 }

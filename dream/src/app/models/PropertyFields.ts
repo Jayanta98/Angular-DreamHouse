@@ -4,4 +4,6 @@ export class PropertyFields {
     propertyName: string;
     estimatedAmount: number;
     applicationId: number;
+    status: boolean;
+    statusMessage: string;
 }

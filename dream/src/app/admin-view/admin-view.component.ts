@@ -22,6 +22,12 @@ export class AdminViewComponent implements OnInit {
   showPropertyList: boolean = false;
   showLoanList: boolean = false;
 
+  applicationId: number;
+  appDetail: ApplicationDetails;
+  incomeDetail: IncomeFields;
+  propertyDetail: PropertyFields;
+  loanDetail: LoanFields;
+
   constructor(private adminService: AdminService) { }
 
   ngOnInit(): void {
@@ -35,9 +41,6 @@ export class AdminViewComponent implements OnInit {
         this.showIncomeList = false;
         this.showPropertyList = false;
         this.showLoanList = false;
-        // alert(JSON.stringify(this.applications));
-        // console.log(response);
-        // alert(JSON.stringify(response));
       })
     }
     
@@ -78,4 +81,33 @@ export class AdminViewComponent implements OnInit {
       })
     }
   }
+
+  viewAppDetail() {
+    this.adminService.viewAppDetail(this.applicationId).subscribe(response => {
+      this.appDetail = response;
+      console.log(JSON.stringify(this.appDetail));
+    })
+  }
+
+  viewIncomeDetail() {
+    this.adminService.viewIncomeDetail(this.applicationId).subscribe(response => {
+      this.incomeDetail = response;
+      console.log(this.incomeDetail);
+    })
+  }
+
+  viewPropertyDetail() {
+    this.adminService.viewPropertyDetail(this.applicationId).subscribe(response => {
+      this.propertyDetail = response;
+      console.log(this.propertyDetail);
+    })
+  }
+
+  viewLoanDetail() {
+    this.adminService.viewLoanDetail(this.applicationId).subscribe(response => {
+      this.loanDetail = response;
+      console.log(this.loanDetail);
+    })
+  }
+
 }
