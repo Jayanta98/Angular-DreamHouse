@@ -39,7 +39,7 @@
 
               <div class="form-group">
                   <label>Enter Account Type </label>
-                  <input type="text" name="accountType" class="form-control" [(ngModel)]="accDetailsByAdmin.account.accountType" #accountType="ngModel" [ngClass]="{ 'is-invalid': f.submitted && accountType.invalid }" required >
+                  <input type="text" placeholder="Savings/Current/Salary/Loan Account" name="accountType" class="form-control" [(ngModel)]="accDetailsByAdmin.account.accountType" #accountType="ngModel" [ngClass]="{ 'is-invalid': f.submitted && accountType.invalid }" required >
                   <div *ngIf="f.submitted && accountType.invalid" class="invalid-feedback">
                       <div *ngIf="accountType.errors.required">Account Type  is required</div>
                   </div>
