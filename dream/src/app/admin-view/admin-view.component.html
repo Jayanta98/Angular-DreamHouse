@@ -126,6 +126,7 @@
             <th>Account Type</th>
         </tr>
         <tr *ngFor="let appdetail of appDetail">
+            <td><input type="number" placeholder="Enter Application Id" name="applicationId" [(ngModel)]="appdetail.applicationId"></td>
             <td>{{ appdetail.applicationId }}</td>
             <td>{{ appdetail.firstname }}</td>
             <td>{{ appdetail.middlename}}</td>
@@ -154,7 +155,7 @@
             <th>Age of Retirement</th>
         </tr>
         <tr *ngFor="let incomedetail of incomeDetail">
-            <td>{{ incomedetail.applicationId }}</td>
+            <td><input type="number" placeholder="Enter Application Id" name="applicationId" [(ngModel)]="incomedetail.app"></td>
             <td>{{ incomedetail.income.typeOfEmployement }}</td>
             <td>{{ incomedetail.income.organizationType }}</td>
             <td>{{ incomedetail.income.employerName }}</td>
@@ -172,7 +173,7 @@
             <th>Estimated Value</th>
         </tr>
         <tr *ngFor="let propertydetail of propertyDetail">
-            <td>{{ propertydetail.applicationId }}</td>
+            <td><input type="number" placeholder="Enter Application Id" name="applicationId" [(ngModel)]="propertydetail.applicationId"></td>
             <td>{{ propertydetail.property.propertyLocation }}</td>
             <td>{{ propertydetail.property.propertyName }}</td>
             <td>{{ propertydetail.property.estimatedAmount }}</td>   
@@ -196,7 +197,7 @@
             <th>Eligibility Status</th> -->
         </tr>
         <tr *ngFor="let loandetail of loanDetail">
-            <td>{{ loandetail.applicationId }}</td>
+            <td><input type="number" placeholder="Enter Application Id" name="applicationId" [(ngModel)]="loandetail.applicationId"></td>
             <td>{{ loandetail.loan.loanAmount }}</td>
             <td>{{ loandetail.loan.tenure }}</td>
             <td>{{ loandetail.loan.customerMonthlyIncome }}</td>
