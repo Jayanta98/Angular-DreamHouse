@@ -44,7 +44,7 @@ export class CustomerService {
   }
 
   documentSubmit(formData: FormData) : Observable <Status> {// modifications required
-    let url = 'http://localhost:9292/document-submit';
+    let url = 'http://localhost:9292/documents-submit';
     return this.http.post<Status>(url, formData);
   }
 
