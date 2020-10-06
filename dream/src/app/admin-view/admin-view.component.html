@@ -1,1 +1,104 @@
-<p>admin-view works!</p>
+<div>
+    <button (click)="viewApplications()" >View all Applications</button><br/>
+    <button (click)="viewIncomeList()" >View all Income List</button><br/>
+    <button (click)="viewPropertyList()" >View all Property List</button><br/>
+    <button (click)="viewLoanList()" >View all Loan List</button><br/>
+</div>
+
+<div *ngIf="showApplication">
+    <table style="width:100%">
+        <tr>
+            <th>Application Id</th>
+            <th>Firstname</th>
+            <th>Lastname</th> 
+            <th>Email</th>
+            <th>Phone</th>
+            <th>DOB</th>
+            <th>Aadhar</th>
+            <th>Pan</th>
+            <th>Appointment Date</th>
+        </tr>
+        <tr *ngFor="let app of applications">
+            <td>{{ app.applicationId }}</td>
+            <td>{{ app.firstname }}</td>
+            <td>{{ app.lastname }}</td>
+            <td>{{ app.email }}</td>
+            <td>{{ app.phoneNo }}</td>
+            <td>{{ app.dateOfBirth }}</td>
+            <td>{{ app.aadharNo }}</td>
+            <td>{{ app.panNo }}</td>
+            <td>{{ app.dateOfAppointment }}</td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="showIncomeList">
+    <table style="width:100%">
+        <tr>
+            <th>Income Id</th>
+            <th>Employment Type</th>
+            <th>Organization Type</th> 
+            <th>Employer Name</th>
+            <th>Application Id</th>
+        </tr>
+        <tr *ngFor="let income of incomeList">
+            <td>{{ income.incomeId }}</td>
+            <td>{{ income.typeOfEmployement }}</td>
+            <td>{{ income.organizationType }}</td>
+            <td>{{ income.employerName }}</td>
+            <td>{{ income.applicationId }}</td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="showPropertyList">
+    <table style="width:100%">
+        <tr>
+            <th>Property Id</th>
+            <th>Property Location</th>
+            <th>Property Name</th> 
+            <th>Estimated Value</th>
+            <th>Application Id</th>
+        </tr>
+        <tr *ngFor="let property of propertyList">
+            <td>{{ property.propertyId }}</td>
+            <td>{{ property.propertyLocation }}</td>
+            <td>{{ property.propertyName }}</td>
+            <td>{{ property.estimatedAmount }}</td>
+            <td>{{ property.applicationId }}</td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="showLoanList">
+    <table style="width:100%">
+        <tr>
+            <th>Loan Id</th>
+            <th>Interest Rate</th>
+            <th>Loan Amt.</th> 
+            <th>Max Loan Amt.</th>
+            <th>Monthly Income</th>
+            <th>Eligibility Status</th>
+            <th>Emi startdate</th>
+            <th>Emi enddate</th>
+            <th>Emi</th>
+            <th>Tenure(months)</th>
+            <th>Loan Status</th>
+            <th>Application Id</th>
+        </tr>
+        <tr *ngFor="let loan of loanList">
+            <td>{{ loan.loanId }}</td>
+            <td>{{ loan.interestRate }}</td>
+            <td>{{ loan.loanAmount }}</td>
+            <td>{{ loan.maxLoanAmount }}</td>
+            <td>{{ loan.customerMonthlyIncome }}</td>
+            <td>{{ loan.eligibilityStatus }}</td>
+            <td>{{ loan.startDate }}</td>
+            <td>{{ loan.endDate }}</td>
+            <td>{{ loan.emi }}</td>
+            <td>{{ loan.tenure }}</td>
+            <td>{{ loan.loanStatus }}</td>
+            <td>{{ loan.applicationId }}</td>
+        </tr>
+    </table>
+</div>
