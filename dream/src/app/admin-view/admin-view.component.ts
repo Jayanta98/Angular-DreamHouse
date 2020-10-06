@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-admin-view',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private adminService: AdminService) { }
 
   ngOnInit(): void {
   }
 
+  viewApplications() {
+    this.adminService.showApplicationList().subscribe(response => {
+      console.log(response);
+      alert(JSON.stringify(response));
+
+    })
+  }
 }
