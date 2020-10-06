@@ -12,6 +12,7 @@ import { LoanFields } from './models/LoanFields';
 import { IncomeFields } from './models/IncomeFields';
 import { Status } from './models/Status';
 import { UpdateApplicationStatus } from './models/UpdateApplicationStatus';
+import { LoanDetailsForAdmin } from './models/LoanDetailsForAdmin';
 
 @Injectable({
   providedIn: 'root'
@@ -54,6 +55,16 @@ export class AdminService {
   updateApplicationStatus(updateAppStatusDetail:UpdateApplicationStatus):Observable<Status>{
      let url = 'http://localhost:9292/update-appStatus';
      return this.http.post<Status>(url,updateAppStatusDetail);
+  }
+
+  getLoanDetailsForAdmin( applicationId:number):Observable<LoanDetailsForAdmin>{
+    let url = 'http://localhost:9292/loanDetailsforAdmin?applicationId='+applicationId;
+    return this.http.get<LoanDetailsForAdmin>(url);
+  }
+
+  updateLoanTableByAdmin(loanDetailsForAdmin:LoanDetailsForAdmin): Observable<Status>{
+    let url = 'http://localhost:9292/update-loanByadmin';
+    return this.http.post<Status>(url,loanDetailsForAdmin);
   }
 
 }

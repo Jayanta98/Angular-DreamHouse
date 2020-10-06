@@ -5,6 +5,7 @@ import { ApplicationDetails } from '../models/ApplicationDetails';
 import { UpdateApplicationStatus } from '../models/UpdateApplicationStatus';
 import { Router } from '@angular/router';
 import { AdminService } from '../admin.service';
+import { LoanDetailsForAdmin } from '../models/LoanDetailsForAdmin';
 
 @Component({
   selector: 'app-admin-update',
@@ -68,6 +69,40 @@ feedbackStatus:Status;
     this.adminService.updateApplicationStatus(this.updateAppStatusDetail).subscribe(response=>{
      this.feedbackStatus=response;
       alert(JSON.stringify(this.feedbackStatus)  );
+    })
+  }
+
+
+
+  //Loan Table Updating Functionality
+
+  customerAppId:number;
+  loanDetailsforadmin:LoanDetailsForAdmin=new LoanDetailsForAdmin();
+  ForLoanDetails(){
+
+    alert(JSON.stringify(this.customerAppId));
+      this.adminService.getLoanDetailsForAdmin(this.customerAppId).subscribe(response=>{
+        this.loanDetailsforadmin=response;
+        alert(JSON.stringify(this.loanDetailsforadmin));
+
+
+      if(this.loanDetailsforadmin.myStatus==true){
+       // console.log(this.appdetail.applicationStatusMessage);
+        // this.router.navigate(['/'])
+      }
+      else{
+        this.router.navigate(['/errorby-admin']);
+      }
+
+      })
+  }
+
+  gotStatus:Status;
+  updateLoanOnSubmit(){
+    alert(JSON.stringify(this.loanDetailsforadmin));
+    this.adminService.updateLoanTableByAdmin(this.loanDetailsforadmin).subscribe(response=>{
+      this.gotStatus=response;
+      alert(JSON.stringify(this.gotStatus));
     })
   }
 
