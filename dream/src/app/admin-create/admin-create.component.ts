@@ -19,10 +19,10 @@ accCreateStatus:Status;
   }
 
   mySubmit(){
-      JSON.stringify(this.accDetailsByAdmin);
+     alert(JSON.stringify(this.accDetailsByAdmin)) ;
       this.adminService.createAccountByAdmin(this.accDetailsByAdmin).subscribe(response=>{
         this.accCreateStatus=response;
-        JSON.stringify(this.accCreateStatus);
+       alert( JSON.stringify(this.accCreateStatus));
       })
   }
 }
