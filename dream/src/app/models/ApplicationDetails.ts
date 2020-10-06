@@ -13,9 +13,9 @@ export class ApplicationDetails {
 	dateOfAppointment: string;
 	applicationStatusMessage: string;
 
-  accountNo: number;
-   ammount:number;
-   accountType:string;
+	accountNo: number;
+	ammount:number;
+	accountType:string;
 
 	status: boolean;
 

@@ -11,4 +11,6 @@ export class LoanFields {
     endDate: string;
     loanStatus: string;
     applicationId: number;
+    statusMessage: string;
+    status: boolean;
 }

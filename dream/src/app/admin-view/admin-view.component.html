@@ -3,6 +3,10 @@
     <button (click)="viewIncomeList()" >View all Income List</button><br/>
     <button (click)="viewPropertyList()" >View all Property List</button><br/>
     <button (click)="viewLoanList()" >View all Loan List</button><br/>
+    <button (click)="viewAppDetail()">View App Details by Id</button>
+    <button (click)="viewIncomeDetail()">View Income Details by Id</button>
+    <button (click)="viewPropertyDetail()">View Property Details by Id</button>
+    <button (click)="viewLoanDetail()">View Loan Details by Id</button>
 </div>
 
 <div *ngIf="showApplication">
@@ -102,3 +106,108 @@
         </tr>
     </table>
 </div>
+<div *ngIf="viewAppDetail">
+    <table style="width:100%">
+        <tr>
+            <th>Application Id</th>
+            <th>Firstname</th>
+            <th>Middlename</th>
+            <th>Lastname</th> 
+            <th>Email</th>
+            <th>Phone</th>
+            <th>DOB</th>
+            <th>Nationality</th>
+            <th>Aadhar</th>
+            <th>Pan</th>
+            <th>Appointment Date</th>
+            <th>Status</th>
+            <th>Account No</th>
+            <th>Amount</th>
+            <th>Account Type</th>
+        </tr>
+        <tr *ngFor="let appdetail of appDetail">
+            <td>{{ appdetail.applicationId }}</td>
+            <td>{{ appdetail.firstname }}</td>
+            <td>{{ appdetail.middlename}}</td>
+            <td>{{ appdetail.lastname }}</td>
+            <td>{{ appdetail.email }}</td>
+            <td>{{ appdetail.phoneNo }}</td>
+            <td>{{ appdetail.dateOfBirth }}</td>
+            <td>{{ appdetail.nationality}}</td>
+            <td>{{ appdetail.aadharNo }}</td>
+            <td>{{ appdetail.panNo }}</td>
+            <td>{{ appdetail.dateOfAppointment }}</td>
+            <td>{{ appdetail.applicationStatusMessage}}</td>
+            <td>{{ appdetail.accountNo}}</td>
+            <td>{{ appdetail.ammount}}</td>
+            <td>{{ appdetail.accountType}}</td>
+        </tr>
+    </table>
+</div>
+<div *ngIf="viewIncomeDetail">
+    <table style="width:100%">
+        <tr>
+            <th>Application Id</th>
+            <th>Employment Type</th>
+            <th>Organization Type</th> 
+            <th>Employer Name</th>
+            <th>Age of Retirement</th>
+        </tr>
+        <tr *ngFor="let incomedetail of incomeDetail">
+            <td>{{ incomedetail.applicationId }}</td>
+            <td>{{ incomedetail.income.typeOfEmployement }}</td>
+            <td>{{ incomedetail.income.organizationType }}</td>
+            <td>{{ incomedetail.income.employerName }}</td>
+            <td>{{ incomedetail.income.retirementAge }}</td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="viewPropertyDetail">
+    <table style="width:100%">
+        <tr>
+            <th>Application Id</th>
+            <th>Property Location</th>
+            <th>Property Name</th> 
+            <th>Estimated Value</th>
+        </tr>
+        <tr *ngFor="let propertydetail of propertyDetail">
+            <td>{{ propertydetail.applicationId }}</td>
+            <td>{{ propertydetail.property.propertyLocation }}</td>
+            <td>{{ propertydetail.property.propertyName }}</td>
+            <td>{{ propertydetail.property.estimatedAmount }}</td>   
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="viewLoanDetail">
+    <table style="width:100%">
+        <tr>
+            <th>Application Id</th>
+            <th>Loan Amount</th>
+            <th>Tenure (Monthly)</th>
+            <th>Monthly Income</th> 
+            <!-- <th>Max Loan Amount</th>
+            <th>Interest Rate</th>
+            <th>EMI</th>
+            <th>Emi startdate</th>
+            <th>Emi enddate</th>
+            <th>Loan Status</th>
+            <th>Eligibility Status</th> -->
+        </tr>
+        <tr *ngFor="let loandetail of loanDetail">
+            <td>{{ loandetail.applicationId }}</td>
+            <td>{{ loandetail.loan.loanAmount }}</td>
+            <td>{{ loandetail.loan.tenure }}</td>
+            <td>{{ loandetail.loan.customerMonthlyIncome }}</td>
+            <!-- <td>{{ loandetail.loan.maxLoanAmount }}</td>
+            <td>{{ loandetail.loan.interestRate }}</td>
+            <td>{{ loandetail.loan.emi }}</td>
+            <td>{{ loandetail.loan.startDate }}</td>
+            <td>{{ loandetail.loan.endDate }}</td>
+            <td>{{ loandetail.loan.loanStatus }}</td>
+            <td>{{ loandetail.loan.eligibilityStatus }}</td>    -->
+        </tr>
+    </table>
+</div>
+

@@ -57,14 +57,24 @@ export class AdminService {
      return this.http.post<Status>(url,updateAppStatusDetail);
   }
 
-  getLoanDetailsForAdmin( applicationId:number):Observable<LoanDetailsForAdmin>{
-    let url = 'http://localhost:9292/loanDetailsforAdmin?applicationId='+applicationId;
-    return this.http.get<LoanDetailsForAdmin>(url);
+  viewAppDetail(applicationId: number) : Observable<ApplicationDetails> {
+    let url = 'http://localhost:9292/view-application?applicationId'+applicationId;
+    return this.http.get<ApplicationDetails>(url);
   }
 
-  updateLoanTableByAdmin(loanDetailsForAdmin:LoanDetailsForAdmin): Observable<Status>{
-    let url = 'http://localhost:9292/update-loanByadmin';
-    return this.http.post<Status>(url,loanDetailsForAdmin);
+  viewIncomeDetail(applicationId: number) : Observable<IncomeFields> {
+    let url = 'http://localhost:9292/view-income?applicationId'+applicationId;
+    return this.http.get<IncomeFields>(url);
+  }
+
+  viewPropertyDetail(applicationId: number) : Observable<PropertyFields> {
+    let url = 'http://localhost:9292/view-property?applicationId'+applicationId;
+    return this.http.get<PropertyFields>(url);
+  }
+
+  viewLoanDetail(applicationId: number) : Observable<LoanFields> {
+    let url = 'http://localhost:9292/view-loan?applicationId'+applicationId;
+    return this.http.get<LoanFields>(url);
   }
 
 }
