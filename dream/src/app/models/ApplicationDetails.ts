@@ -13,7 +13,7 @@ export class ApplicationDetails {
 	panNo: string;
 	dateOfAppointment: string;
 	applicationStatusMessage: string;
-  	accountNo: number;
+  accountNo: number;
    ammount:number;
    accountType:string;
 	status: boolean;
