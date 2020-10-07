@@ -47,11 +47,11 @@ const routes: Routes = [
   { path: 'errorby-admin', component: AdminErrorComponent },
 
   { path: 'admin-dashboard', component: AdmindashboardComponent ,
-  children: [
-    { path: 'admin-view', component: AdminViewComponent },
-    { path: 'admin-create', component: AdminCreateComponent },
-    { path: 'admin-update', component: AdminUpdateComponent },
-  ]
+    children: [
+      { path: 'admin-view', component: AdminViewComponent },
+      { path: 'admin-create', component: AdminCreateComponent },
+      { path: 'admin-update', component: AdminUpdateComponent },
+    ]
   },
 
   { path: 'customer-dashboard', component: CustomerdashboardComponent },
