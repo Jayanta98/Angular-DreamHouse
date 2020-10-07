@@ -76,7 +76,7 @@ export class DocumentComponent implements OnInit {
       alert(JSON.stringify(this.docSubmitstatus));
 
       if(this.docSubmitstatus.status == true) {
-        this.router.navigate(['/login']);
+        this.router.navigate(['/thank-you']);
       }
     })
 

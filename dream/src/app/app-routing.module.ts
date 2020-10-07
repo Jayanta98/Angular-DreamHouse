@@ -29,7 +29,7 @@ import { EditIncomeComponent } from './edit-income/edit-income.component';
 import { EditPropertyComponent } from './edit-property/edit-property.component';
 import { EditLoanComponent } from './edit-loan/edit-loan.component';
 import { EditDocumentComponent } from './edit-document/edit-document.component';
-
+import { ThankYouComponent } from './thank-you/thank-you.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -50,7 +50,7 @@ const routes: Routes = [
   { path: 'customer-login', component: CustomerloginComponent },
   { path: 'gate', component: ApplyGateComponent },
   { path: 'errorby-admin', component: AdminErrorComponent },
-
+  { path: 'thank-you', component: ThankYouComponent },
   { path: 'alledit', component: EditGateComponent ,
   children: [
   { path: 'editregi', component: EditRegistrationComponent },

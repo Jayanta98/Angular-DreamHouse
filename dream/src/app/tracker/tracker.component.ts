@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CustomerService } from '../customer.service';
 import { Status } from '../models/Status';
 
@@ -7,24 +7,29 @@ import { Status } from '../models/Status';
   templateUrl: './tracker.component.html',
   styleUrls: ['./tracker.component.css']
 })
-export class TrackerComponent implements OnInit {
+export class TrackerComponent {
 
   applicationId: number;
-  appStatus: Status = new Status();
+  appStatus: Status;
+  showError: boolean = false;
+  showStatus: boolean = false;
+  statusMsg: string;
 
   constructor(private customerService: CustomerService) { }
 
-  ngOnInit(): void {
-  }
-
   track() {
     this.customerService.trackApplication(this.applicationId).subscribe(response => {
-
       this.appStatus = response;
-      
-      alert(JSON.stringify(this.appStatus));
-      console.log(this.appStatus.status);
-      console.log(this.appStatus.statusMessage);
+      if(this.appStatus.status == false) {
+        this.showError = true;
+        this.showStatus = false;
+        this.statusMsg = this.appStatus.statusMessage;
+      }
+      else {
+        this.showStatus = true;
+        this.showError = false;
+        this.statusMsg = this.appStatus.statusMessage;
+      }
     })
   }
 

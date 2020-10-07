@@ -50,7 +50,12 @@
       <input type="text" placeholder="Enter Application Number" name="applicationNo" [(ngModel)]="applicationId" required>
 
       <button class="mybtn" type="submit">Track Me</button>
-
+      <div *ngIf="showStatus">
+        <h4>Your application Status: {{ statusMsg }}</h4>
+      </div>
+      <div *ngIf="showError">
+        <h4 style="color: orangered;">{{ statusMsg }}</h4>
+      </div>  
     </div>
   </form>
 </div>
