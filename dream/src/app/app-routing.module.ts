@@ -30,6 +30,7 @@ import { EditPropertyComponent } from './edit-property/edit-property.component';
 import { EditLoanComponent } from './edit-loan/edit-loan.component';
 import { EditDocumentComponent } from './edit-document/edit-document.component';
 import { ThankYouComponent } from './thank-you/thank-you.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -74,6 +75,7 @@ const routes: Routes = [
 
   { path: 'customer-dashboard', component: CustomerdashboardComponent },
   { path: 'login-error', component: LoginErrorComponent },
+  { path: 'forgot-psw', component: ForgotPasswordComponent },
 
 
 ];

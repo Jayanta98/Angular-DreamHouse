@@ -37,6 +37,7 @@ import { EditPropertyComponent } from './edit-property/edit-property.component';
 import { EditLoanComponent } from './edit-loan/edit-loan.component';
 import { EditDocumentComponent } from './edit-document/edit-document.component';
 import { ThankYouComponent } from './thank-you/thank-you.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,9 @@ import { ThankYouComponent } from './thank-you/thank-you.component';
 
     EditDocumentComponent,
 
-    ThankYouComponent
+    ThankYouComponent,
+
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
