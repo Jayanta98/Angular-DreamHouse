@@ -26,7 +26,7 @@ appdetail: ApplicationDetails = new ApplicationDetails();
   }
 
   updateAppStatusDetail:UpdateApplicationStatus= new UpdateApplicationStatus();//use for update form
-feedbackStatus:Status;
+  feedbackStatus:Status;
   custEmail:any;
 
   accNumber:any;//can be use during EMI table updating time

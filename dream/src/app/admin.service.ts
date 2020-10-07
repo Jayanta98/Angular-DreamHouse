@@ -13,6 +13,7 @@ import { IncomeFields } from './models/IncomeFields';
 import { Status } from './models/Status';
 import { UpdateApplicationStatus } from './models/UpdateApplicationStatus';
 import { LoanDetailsForAdmin } from './models/LoanDetailsForAdmin';
+import { RegistrationDetails } from './models/RegistrationDetails';
 
 @Injectable({
   providedIn: 'root'
@@ -92,6 +93,18 @@ export class AdminService {
   updateLoanTableByAdmin(  loanDetailsforadmin:LoanDetailsForAdmin):Observable<Status>{
     let url = 'http://localhost:9292/update-loanByadmin';
    return this.http.post<Status>(url,loanDetailsforadmin);
+  }
+
+
+  //EDIT-ing Functionality of registration or application table
+  getRegistrationDEtailsForEdit(applicationId:number): Observable<RegistrationDetails>{
+    let url = 'http://localhost:9292/regiDetailsForEditing?applicationId='+applicationId;
+    return this.http.get<RegistrationDetails>(url);
+  }
+
+  updateRegistrationByUser(regiDetails:RegistrationDetails):Observable<Status>{
+    let url = 'http://localhost:9292/editRegistrationByUser';
+    return this.http.post<Status>(url,regiDetails);
   }
 
 }
