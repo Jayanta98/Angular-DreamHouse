@@ -22,11 +22,18 @@ export class AdminViewComponent implements OnInit {
   showPropertyList: boolean = false;
   showLoanList: boolean = false;
 
+  showAppDetail: boolean = false;
+  showIncomeDetail: boolean = false;
+  showPropertyDetail: boolean = false;
+  showLoanDetail: boolean = false;
+  showError: boolean = false;
+
   applicationId: number;
   appDetail: ApplicationDetails;
   incomeDetail: IncomeFields;
   propertyDetail: PropertyFields;
   loanDetail: LoanFields;
+  errorMsg: string;
 
   constructor(private adminService: AdminService) { }
 
@@ -41,7 +48,15 @@ export class AdminViewComponent implements OnInit {
         this.showIncomeList = false;
         this.showPropertyList = false;
         this.showLoanList = false;
+        this.showAppDetail = false;
+        this.showIncomeDetail = false;
+        this.showPropertyDetail = false;
+        this.showLoanDetail = false;
+        this.showError = false;
       })
+    }
+    else {
+      this.showApplication = !this.showApplication;
     }
     
   }
@@ -54,7 +69,15 @@ export class AdminViewComponent implements OnInit {
         this.showApplication = false;
         this.showPropertyList = false;
         this.showLoanList = false;
+        this.showAppDetail = false;
+        this.showIncomeDetail = false;
+        this.showPropertyDetail = false;
+        this.showLoanDetail = false;
+        this.showError = false;
       })
+    }
+    else {
+      this.showIncomeList = !this.showIncomeList;
     }
   }
 
@@ -66,7 +89,15 @@ export class AdminViewComponent implements OnInit {
         this.showApplication = false;
         this.showIncomeList = false;
         this.showLoanList = false;
+        this.showAppDetail = false;
+        this.showIncomeDetail = false;
+        this.showPropertyDetail = false;
+        this.showLoanDetail = false;
+        this.showError = false;
       })
+    }
+    else {
+      this.showPropertyList = !this.showPropertyList;
     }
   }
 
@@ -78,35 +109,139 @@ export class AdminViewComponent implements OnInit {
         this.showApplication = false;
         this.showIncomeList = false;
         this.showPropertyList = false;
+        this.showAppDetail = false;
+        this.showIncomeDetail = false;
+        this.showPropertyDetail = false;
+        this.showLoanDetail = false;
+        this.showError = false;
       })
+    }
+    else {
+      this.showLoanList = !this.showLoanList;
     }
   }
 
   viewAppDetail() {
     this.adminService.viewAppDetail(this.applicationId).subscribe(response => {
       this.appDetail = response;
-      console.log(JSON.stringify(this.appDetail));
+
+      if(this.appDetail.status == false) {
+        this.errorMsg = this.appDetail.applicationStatusMessage;
+        this.showError = true;
+        this.showAppDetail = false;
+        this.showIncomeDetail = false;
+        this.showPropertyDetail = false;
+        this.showLoanDetail = false;
+        this.showApplication = false;
+        this.showIncomeList = false;
+        this.showPropertyList = false;
+        this.showLoanList = false;
+      }
+
+      else if(this.showAppDetail == false) {
+        this.showAppDetail = !this.showAppDetail;
+        this.showIncomeDetail = false;
+        this.showPropertyDetail = false;
+        this.showLoanDetail = false;
+        this.showError = false;
+        this.showApplication = false;
+        this.showIncomeList = false;
+        this.showPropertyList = false;
+        this.showLoanList = false;
+      }
     })
   }
 
   viewIncomeDetail() {
     this.adminService.viewIncomeDetail(this.applicationId).subscribe(response => {
       this.incomeDetail = response;
-      console.log(this.incomeDetail);
+
+      if(this.incomeDetail.status == false) {
+        this.errorMsg = this.incomeDetail.statusMessage;
+        this.showError = true;
+        this.showAppDetail = false;
+        this.showIncomeDetail = false;
+        this.showPropertyDetail = false;
+        this.showLoanDetail = false;
+        this.showApplication = false;
+        this.showIncomeList = false;
+        this.showPropertyList = false;
+        this.showLoanList = false;
+      }
+
+      else if(this.showIncomeDetail == false) {
+        this.showIncomeDetail = !this.showIncomeDetail;
+        this.showAppDetail = false;
+        this.showPropertyDetail = false;
+        this.showLoanDetail = false;
+        this.showError = false;
+        this.showApplication = false;
+        this.showIncomeList = false;
+        this.showPropertyList = false;
+        this.showLoanList = false;
+      }
     })
   }
 
   viewPropertyDetail() {
     this.adminService.viewPropertyDetail(this.applicationId).subscribe(response => {
       this.propertyDetail = response;
-      console.log(this.propertyDetail);
+
+      if(this.propertyDetail.status == false) {
+        this.errorMsg = this.propertyDetail.statusMessage;
+        this.showError = true;
+        this.showAppDetail = false;
+        this.showIncomeDetail = false;
+        this.showPropertyDetail = false;
+        this.showLoanDetail = false;
+        this.showApplication = false;
+        this.showIncomeList = false;
+        this.showPropertyList = false;
+        this.showLoanList = false;
+      }
+
+      else if(this.showPropertyDetail == false) {
+        this.showPropertyDetail = !this.showPropertyDetail;
+        this.showAppDetail = false;
+        this.showIncomeDetail = false;
+        this.showLoanDetail = false;
+        this.showError = false;
+        this.showApplication = false;
+        this.showIncomeList = false;
+        this.showPropertyList = false;
+        this.showLoanList = false;
+      }
     })
   }
 
   viewLoanDetail() {
     this.adminService.viewLoanDetail(this.applicationId).subscribe(response => {
       this.loanDetail = response;
-      console.log(this.loanDetail);
+
+      if(this.loanDetail.status == false) {
+        this.errorMsg = this.loanDetail.statusMessage;
+        this.showError = true;
+        this.showAppDetail = false;
+        this.showIncomeDetail = false;
+        this.showPropertyDetail = false;
+        this.showLoanDetail = false;
+        this.showApplication = false;
+        this.showIncomeList = false;
+        this.showPropertyList = false;
+        this.showLoanList = false;
+      }
+
+      else if(this.showLoanDetail == false) {
+        this.showLoanDetail = !this.showLoanDetail;
+        this.showAppDetail = false;
+        this.showIncomeDetail = false;
+        this.showPropertyDetail = false;
+        this.showError = false;
+        this.showApplication = false;
+        this.showIncomeList = false;
+        this.showPropertyList = false;
+        this.showLoanList = false;
+      }
     })
   }
 
