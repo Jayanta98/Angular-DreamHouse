@@ -1,15 +1,25 @@
-<div>
-    <button (click)="viewApplications()" >View all Applications</button><br/>
-    <button (click)="viewIncomeList()" >View all Income List</button><br/>
-    <button (click)="viewPropertyList()" >View all Property List</button><br/>
-    <button (click)="viewLoanList()" >View all Loan List</button><br/>
-    <button (click)="viewAppDetail()">View App Details by Id</button>
-    <button (click)="viewIncomeDetail()">View Income Details by Id</button>
-    <button (click)="viewPropertyDetail()">View Property Details by Id</button>
-    <button (click)="viewLoanDetail()">View Loan Details by Id</button>
+<div class="btn-group">
+    <button (click)="viewApplications()" >View all Applications</button>
+    <button (click)="viewIncomeList()" >View all Income List</button>
+    <button (click)="viewPropertyList()" >View all Property List</button>
+    <button (click)="viewLoanList()" >View all Loan List</button>
 </div>
-
-<div *ngIf="showApplication">
+<br />
+<br />
+<div class="search-id">
+    <label for="applicationId"><b>Enter Customer Application No:</b></label>
+    <input type="number" placeholder="Enter Application No" name="applicationId" [(ngModel)]="applicationId" required>
+    <button (click)="viewAppDetail()" type="submit">Search App Details</button>
+    <button (click)="viewIncomeDetail()" type="submit">Search Income Details</button>
+    <button (click)="viewPropertyDetail()" type="submit">Search Property Details</button>
+    <button (click)="viewLoanDetail()" type="submit">Search Loan Details</button><br />
+    <div class="error" *ngIf="showError">
+        <p>{{ errorMsg }}</p>
+    </div>
+</div>
+<br />
+<br />
+<div style="margin-left: 15px; margin-right: 20px;" *ngIf="showApplication">
     <table style="width:100%">
         <tr>
             <th>Application Id</th>
@@ -36,7 +46,7 @@
     </table>
 </div>
 
-<div *ngIf="showIncomeList">
+<div style="margin-left: 15px; margin-right: 20px;" *ngIf="showIncomeList">
     <table style="width:100%">
         <tr>
             <th>Income Id</th>
@@ -55,7 +65,7 @@
     </table>
 </div>
 
-<div *ngIf="showPropertyList">
+<div style="margin-left: 15px; margin-right: 20px;" *ngIf="showPropertyList">
     <table style="width:100%">
         <tr>
             <th>Property Id</th>
@@ -74,7 +84,7 @@
     </table>
 </div>
 
-<div *ngIf="showLoanList">
+<div style="margin-left: 15px; margin-right: 20px;" *ngIf="showLoanList">
     <table style="width:100%">
         <tr>
             <th>Loan Id</th>
@@ -106,7 +116,106 @@
         </tr>
     </table>
 </div>
-<div *ngIf="viewAppDetail">
+
+<div style="margin-left: 15px; margin-right: 20px;" *ngIf="showAppDetail">
+    <table style="width:100%">
+        <tr>
+            <th>Application Id</th>
+            <th>Firstname</th>
+            <th>Lastname</th> 
+            <th>Email</th>
+            <th>Phone</th>
+            <th>DOB</th>
+            <th>Aadhar</th>
+            <th>Pan</th>
+            <th>Appointment Date</th>
+        </tr>
+        <tr>
+            <td>{{ appDetail.applicationId }}</td>
+            <td>{{ appDetail.firstname }}</td>
+            <td>{{ appDetail.lastname }}</td>
+            <td>{{ appDetail.email }}</td>
+            <td>{{ appDetail.phoneNo }}</td>
+            <td>{{ appDetail.dateOfBirth }}</td>
+            <td>{{ appDetail.aadharNo }}</td>
+            <td>{{ appDetail.panNo }}</td>
+            <td>{{ appDetail.dateOfAppointment }}</td>
+        </tr>
+    </table>
+</div>
+
+<div style="margin-left: 15px; margin-right: 20px;" *ngIf="showIncomeDetail">
+    <table style="width:100%">
+        <tr>
+            <th>Income Id</th>
+            <th>Employment Type</th>
+            <th>Organization Type</th> 
+            <th>Employer Name</th>
+            <th>Application Id</th>
+        </tr>
+        <tr>
+            <td>{{ incomeDetail.incomeId }}</td>
+            <td>{{ incomeDetail.typeOfEmployement }}</td>
+            <td>{{ incomeDetail.organizationType }}</td>
+            <td>{{ incomeDetail.employerName }}</td>
+            <td>{{ incomeDetail.applicationId }}</td>
+        </tr>
+    </table>
+</div>
+
+<div style="margin-left: 15px; margin-right: 20px;" *ngIf="showPropertyDetail">
+    <table style="width:100%">
+        <tr>
+            <th>Property Id</th>
+            <th>Property Location</th>
+            <th>Property Name</th> 
+            <th>Estimated Value</th>
+            <th>Application Id</th>
+        </tr>
+        <tr>
+            <td>{{ propertyDetail.propertyId }}</td>
+            <td>{{ propertyDetail.propertyLocation }}</td>
+            <td>{{ propertyDetail.propertyName }}</td>
+            <td>{{ propertyDetail.estimatedAmount }}</td>
+            <td>{{ propertyDetail.applicationId }}</td>
+        </tr>
+    </table>
+</div>
+
+<div style="margin-left: 15px; margin-right: 20px;" *ngIf="showLoanDetail">
+    <table style="width:100%">
+        <tr>
+            <th>Loan Id</th>
+            <th>Interest Rate</th>
+            <th>Loan Amt.</th> 
+            <th>Max Loan Amt.</th>
+            <th>Monthly Income</th>
+            <th>Eligibility Status</th>
+            <th>Emi startdate</th>
+            <th>Emi enddate</th>
+            <th>Emi</th>
+            <th>Tenure(months)</th>
+            <th>Loan Status</th>
+            <th>Application Id</th>
+        </tr>
+        <tr>
+            <td>{{ loanDetail.loanId }}</td>
+            <td>{{ loanDetail.interestRate }}</td>
+            <td>{{ loanDetail.loanAmount }}</td>
+            <td>{{ loanDetail.maxLoanAmount }}</td>
+            <td>{{ loanDetail.customerMonthlyIncome }}</td>
+            <td>{{ loanDetail.eligibilityStatus }}</td>
+            <td>{{ loanDetail.startDate }}</td>
+            <td>{{ loanDetail.endDate }}</td>
+            <td>{{ loanDetail.emi }}</td>
+            <td>{{ loanDetail.tenure }}</td>
+            <td>{{ loanDetail.loanStatus }}</td>
+            <td>{{ loanDetail.applicationId }}</td>
+        </tr>
+    </table>
+</div>
+
+<!-- <div *ngIf="viewAppDetail">
     <table style="width:100%">
         <tr>
             <th>Application Id</th>
@@ -126,6 +235,7 @@
             <th>Account Type</th>
         </tr>
         <tr *ngFor="let appdetail of appDetail">
+            <td><input type="number" placeholder="Enter Application Id" name="applicationId" [(ngModel)]="appdetail.applicationId"></td>
             <td>{{ appdetail.applicationId }}</td>
             <td>{{ appdetail.firstname }}</td>
             <td>{{ appdetail.middlename}}</td>
@@ -154,7 +264,7 @@
             <th>Age of Retirement</th>
         </tr>
         <tr *ngFor="let incomedetail of incomeDetail">
-            <td>{{ incomedetail.applicationId }}</td>
+            <td><input type="number" placeholder="Enter Application Id" name="applicationId" [(ngModel)]="incomedetail.app"></td>
             <td>{{ incomedetail.income.typeOfEmployement }}</td>
             <td>{{ incomedetail.income.organizationType }}</td>
             <td>{{ incomedetail.income.employerName }}</td>
@@ -172,21 +282,21 @@
             <th>Estimated Value</th>
         </tr>
         <tr *ngFor="let propertydetail of propertyDetail">
-            <td>{{ propertydetail.applicationId }}</td>
+            <td><input type="number" placeholder="Enter Application Id" name="applicationId" [(ngModel)]="propertydetail.applicationId"></td>
             <td>{{ propertydetail.property.propertyLocation }}</td>
             <td>{{ propertydetail.property.propertyName }}</td>
             <td>{{ propertydetail.property.estimatedAmount }}</td>   
         </tr>
     </table>
-</div>
+</div> -->
 
-<div *ngIf="viewLoanDetail">
+<!-- <div *ngIf="viewLoanDetail">
     <table style="width:100%">
-        <tr>
-            <th>Application Id</th>
+        <tr> -->
+            <!-- <th>Application Id</th>
             <th>Loan Amount</th>
             <th>Tenure (Monthly)</th>
-            <th>Monthly Income</th> 
+            <th>Monthly Income</th>  -->
             <!-- <th>Max Loan Amount</th>
             <th>Interest Rate</th>
             <th>EMI</th>
@@ -194,12 +304,12 @@
             <th>Emi enddate</th>
             <th>Loan Status</th>
             <th>Eligibility Status</th> -->
-        </tr>
-        <tr *ngFor="let loandetail of loanDetail">
-            <td>{{ loandetail.applicationId }}</td>
+        <!-- </tr> -->
+        <!-- <tr *ngFor="let loandetail of loanDetail">
+            <td><input type="number" placeholder="Enter Application Id" name="applicationId" [(ngModel)]="loandetail.applicationId"></td>
             <td>{{ loandetail.loan.loanAmount }}</td>
             <td>{{ loandetail.loan.tenure }}</td>
-            <td>{{ loandetail.loan.customerMonthlyIncome }}</td>
+            <td>{{ loandetail.loan.customerMonthlyIncome }}</td> -->
             <!-- <td>{{ loandetail.loan.maxLoanAmount }}</td>
             <td>{{ loandetail.loan.interestRate }}</td>
             <td>{{ loandetail.loan.emi }}</td>
@@ -207,7 +317,7 @@
             <td>{{ loandetail.loan.endDate }}</td>
             <td>{{ loandetail.loan.loanStatus }}</td>
             <td>{{ loandetail.loan.eligibilityStatus }}</td>    -->
-        </tr>
+        <!-- </tr>
     </table>
-</div>
+</div> -->
 

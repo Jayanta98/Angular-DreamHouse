@@ -58,22 +58,22 @@ export class AdminService {
   }
 
   viewAppDetail(applicationId: number) : Observable<ApplicationDetails> {
-    let url = 'http://localhost:9292/view-application?applicationId'+applicationId;
+    let url = 'http://localhost:9292/view-application?applicationId='+applicationId;
     return this.http.get<ApplicationDetails>(url);
   }
 
   viewIncomeDetail(applicationId: number) : Observable<IncomeFields> {
-    let url = 'http://localhost:9292/view-income?applicationId'+applicationId;
+    let url = 'http://localhost:9292/view-income?applicationId='+applicationId;
     return this.http.get<IncomeFields>(url);
   }
 
   viewPropertyDetail(applicationId: number) : Observable<PropertyFields> {
-    let url = 'http://localhost:9292/view-property?applicationId'+applicationId;
+    let url = 'http://localhost:9292/view-property?applicationId='+applicationId;
     return this.http.get<PropertyFields>(url);
   }
 
   viewLoanDetail(applicationId: number) : Observable<LoanFields> {
-    let url = 'http://localhost:9292/view-loan?applicationId'+applicationId;
+    let url = 'http://localhost:9292/view-loan?applicationId='+applicationId;
     return this.http.get<LoanFields>(url);
   }
 
