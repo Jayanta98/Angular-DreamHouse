@@ -52,7 +52,7 @@ const routes: Routes = [
     { path: 'admin-create', component: AdminCreateComponent },
     { path: 'admin-update', component: AdminUpdateComponent },
   ]
-},
+  },
 
   { path: 'customer-dashboard', component: CustomerdashboardComponent },
   { path: 'login-error', component: LoginErrorComponent },

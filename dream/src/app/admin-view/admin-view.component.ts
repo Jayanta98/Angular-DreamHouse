@@ -3,6 +3,7 @@ import { ApplicationDetails } from '../models/ApplicationDetails';
 import { IncomeFields } from '../models/IncomeFields';
 import { PropertyFields } from '../models/PropertyFields';
 import { LoanFields } from '../models/LoanFields';
+import { DocFields } from '../models/DocFields';
 import { AdminService } from '../admin.service';
 
 @Component({
@@ -26,6 +27,7 @@ export class AdminViewComponent implements OnInit {
   showIncomeDetail: boolean = false;
   showPropertyDetail: boolean = false;
   showLoanDetail: boolean = false;
+  showDoc: boolean = false;
   showError: boolean = false;
 
   applicationId: number;
@@ -33,6 +35,7 @@ export class AdminViewComponent implements OnInit {
   incomeDetail: IncomeFields;
   propertyDetail: PropertyFields;
   loanDetail: LoanFields;
+  doc: DocFields;
   errorMsg: string;
 
   constructor(private adminService: AdminService) { }
@@ -53,6 +56,7 @@ export class AdminViewComponent implements OnInit {
         this.showPropertyDetail = false;
         this.showLoanDetail = false;
         this.showError = false;
+        this.showDoc = false;
       })
     }
     else {
@@ -74,6 +78,7 @@ export class AdminViewComponent implements OnInit {
         this.showPropertyDetail = false;
         this.showLoanDetail = false;
         this.showError = false;
+        this.showDoc = false;
       })
     }
     else {
@@ -94,6 +99,7 @@ export class AdminViewComponent implements OnInit {
         this.showPropertyDetail = false;
         this.showLoanDetail = false;
         this.showError = false;
+        this.showDoc = false;
       })
     }
     else {
@@ -114,6 +120,7 @@ export class AdminViewComponent implements OnInit {
         this.showPropertyDetail = false;
         this.showLoanDetail = false;
         this.showError = false;
+        this.showDoc = false;
       })
     }
     else {
@@ -136,6 +143,7 @@ export class AdminViewComponent implements OnInit {
         this.showIncomeList = false;
         this.showPropertyList = false;
         this.showLoanList = false;
+        this.showDoc = false;
       }
 
       else if(this.showAppDetail == false) {
@@ -148,6 +156,7 @@ export class AdminViewComponent implements OnInit {
         this.showIncomeList = false;
         this.showPropertyList = false;
         this.showLoanList = false;
+        this.showDoc = false;
       }
     })
   }
@@ -167,6 +176,7 @@ export class AdminViewComponent implements OnInit {
         this.showIncomeList = false;
         this.showPropertyList = false;
         this.showLoanList = false;
+        this.showDoc = false;
       }
 
       else if(this.showIncomeDetail == false) {
@@ -179,6 +189,7 @@ export class AdminViewComponent implements OnInit {
         this.showIncomeList = false;
         this.showPropertyList = false;
         this.showLoanList = false;
+        this.showDoc = false;
       }
     })
   }
@@ -198,6 +209,7 @@ export class AdminViewComponent implements OnInit {
         this.showIncomeList = false;
         this.showPropertyList = false;
         this.showLoanList = false;
+        this.showDoc = false;
       }
 
       else if(this.showPropertyDetail == false) {
@@ -210,6 +222,7 @@ export class AdminViewComponent implements OnInit {
         this.showIncomeList = false;
         this.showPropertyList = false;
         this.showLoanList = false;
+        this.showDoc = false;
       }
     })
   }
@@ -229,10 +242,43 @@ export class AdminViewComponent implements OnInit {
         this.showIncomeList = false;
         this.showPropertyList = false;
         this.showLoanList = false;
+        this.showDoc = false;
       }
 
       else if(this.showLoanDetail == false) {
         this.showLoanDetail = !this.showLoanDetail;
+        this.showAppDetail = false;
+        this.showIncomeDetail = false;
+        this.showPropertyDetail = false;
+        this.showError = false;
+        this.showApplication = false;
+        this.showIncomeList = false;
+        this.showPropertyList = false;
+        this.showLoanList = false;
+        this.showDoc = false;
+      }
+    })
+  }
+
+  viewDocuments() {
+    this.adminService.viewDoc(this.applicationId).subscribe(response => {
+      this.doc = response;
+
+      if(this.doc.status == false) {
+        this.errorMsg = this.doc.statusMessage;
+        this.showError = true;
+        this.showAppDetail = false;
+        this.showIncomeDetail = false;
+        this.showPropertyDetail = false;
+        this.showLoanDetail = false;
+        this.showApplication = false;
+        this.showIncomeList = false;
+        this.showPropertyList = false;
+        this.showLoanList = false;
+        this.showDoc = false;
+      }
+      else if(this.showDoc == false) {
+        this.showDoc = !this.showDoc;
         this.showAppDetail = false;
         this.showIncomeDetail = false;
         this.showPropertyDetail = false;
