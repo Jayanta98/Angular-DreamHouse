@@ -28,6 +28,7 @@ export class PropertyComponent implements OnInit {
   onSubmit(){
     this.propertyDetails.applicationId = this.applicationId;
     alert(JSON.stringify(this.propertyDetails));
+    localStorage.setItem('estimatedamount',String(this.propertyDetails.property.estimatedAmount));
 
     this.customerService.propertySubmit(this.propertyDetails).subscribe(response => {
       this.propertyStatus = response;

@@ -15,6 +15,7 @@ export class LoanComponent implements OnInit {
   loanDetails: LoanDetails = new LoanDetails();
   applicationId: any;
   loanSubmitStatus: Status;
+  estimatedamount: String;// from localStorage only for display
 
   constructor(
     private customerService: CustomerService,
@@ -23,6 +24,7 @@ export class LoanComponent implements OnInit {
 
   ngOnInit(): void {
     this.applicationId = localStorage.getItem('applicationId');
+    this.estimatedamount= localStorage.getItem('estimatedamount');
   }
 
   onSubmit(){
