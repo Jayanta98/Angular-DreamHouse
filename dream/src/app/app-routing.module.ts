@@ -23,7 +23,12 @@ import { AdminCreateComponent } from './admin-create/admin-create.component';
 import { AdminUpdateComponent } from './admin-update/admin-update.component';
 import { ApplyGateComponent } from './apply-gate/apply-gate.component';
 import { AdminErrorComponent } from './admin-error/admin-error.component';
-
+import { EditGateComponent } from './edit-gate/edit-gate.component';
+import { EditRegistrationComponent } from './edit-registration/edit-registration.component';
+import { EditIncomeComponent } from './edit-income/edit-income.component';
+import { EditPropertyComponent } from './edit-property/edit-property.component';
+import { EditLoanComponent } from './edit-loan/edit-loan.component';
+import { EditDocumentComponent } from './edit-document/edit-document.component';
 
 
 const routes: Routes = [
@@ -46,6 +51,16 @@ const routes: Routes = [
   { path: 'gate', component: ApplyGateComponent },
   { path: 'errorby-admin', component: AdminErrorComponent },
 
+  { path: 'alledit', component: EditGateComponent ,
+  children: [
+  { path: 'editregi', component: EditRegistrationComponent },
+  { path: 'editincome', component: EditIncomeComponent },
+  { path: 'editproperty', component: EditPropertyComponent },
+  { path: 'editloan', component: EditLoanComponent },
+  { path: 'editdocs', component: EditDocumentComponent },
+  ]
+  },
+
   { path: 'admin-dashboard', component: AdmindashboardComponent ,
   children: [
     { path: 'admin-view', component: AdminViewComponent },
@@ -53,6 +68,9 @@ const routes: Routes = [
     { path: 'admin-update', component: AdminUpdateComponent },
   ]
 },
+
+
+
 
   { path: 'customer-dashboard', component: CustomerdashboardComponent },
   { path: 'login-error', component: LoginErrorComponent },

@@ -81,13 +81,6 @@ export class AdminService {
 
 
 
-
-
-
-
-
-
-
   getLoanDetailsForAdmin(applicationId: number):Observable<LoanDetailsForAdmin>{
     let url = 'http://localhost:9292/loanDetailsforAdmin?applicationId='+applicationId;
     return this.http.get<LoanDetailsForAdmin>(url);

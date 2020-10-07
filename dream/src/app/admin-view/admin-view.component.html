@@ -1,11 +1,14 @@
-<div class="btn-group">
+<div class="justify-content-center align-content-center d-flex">
+<div class="btn-group ">
     <button (click)="viewApplications()" >View all Applications</button>
     <button (click)="viewIncomeList()" >View all Income List</button>
     <button (click)="viewPropertyList()" >View all Property List</button>
     <button (click)="viewLoanList()" >View all Loan List</button>
 </div>
+</div>
 <br />
 <br />
+<div class="justify-content-center align-content-center d-flex">
 <div class="search-id">
     <label for="applicationId"><b>Enter Customer Application No:</b></label>
     <input type="number" placeholder="Enter Application No" name="applicationId" [(ngModel)]="applicationId" required>
@@ -17,6 +20,7 @@
         <p>{{ errorMsg }}</p>
     </div>
 </div>
+</div>
 <br />
 <br />
 <div style="margin-left: 15px; margin-right: 20px;" *ngIf="showApplication">
@@ -24,7 +28,7 @@
         <tr>
             <th>Application Id</th>
             <th>Firstname</th>
-            <th>Lastname</th> 
+            <th>Lastname</th>
             <th>Email</th>
             <th>Phone</th>
             <th>DOB</th>
@@ -51,7 +55,7 @@
         <tr>
             <th>Income Id</th>
             <th>Employment Type</th>
-            <th>Organization Type</th> 
+            <th>Organization Type</th>
             <th>Employer Name</th>
             <th>Application Id</th>
         </tr>
@@ -70,7 +74,7 @@
         <tr>
             <th>Property Id</th>
             <th>Property Location</th>
-            <th>Property Name</th> 
+            <th>Property Name</th>
             <th>Estimated Value</th>
             <th>Application Id</th>
         </tr>
@@ -89,7 +93,7 @@
         <tr>
             <th>Loan Id</th>
             <th>Interest Rate</th>
-            <th>Loan Amt.</th> 
+            <th>Loan Amt.</th>
             <th>Max Loan Amt.</th>
             <th>Monthly Income</th>
             <th>Eligibility Status</th>
@@ -122,7 +126,7 @@
         <tr>
             <th>Application Id</th>
             <th>Firstname</th>
-            <th>Lastname</th> 
+            <th>Lastname</th>
             <th>Email</th>
             <th>Phone</th>
             <th>DOB</th>
@@ -149,7 +153,7 @@
         <tr>
             <th>Income Id</th>
             <th>Employment Type</th>
-            <th>Organization Type</th> 
+            <th>Organization Type</th>
             <th>Employer Name</th>
             <th>Application Id</th>
         </tr>
@@ -168,7 +172,7 @@
         <tr>
             <th>Property Id</th>
             <th>Property Location</th>
-            <th>Property Name</th> 
+            <th>Property Name</th>
             <th>Estimated Value</th>
             <th>Application Id</th>
         </tr>
@@ -187,7 +191,7 @@
         <tr>
             <th>Loan Id</th>
             <th>Interest Rate</th>
-            <th>Loan Amt.</th> 
+            <th>Loan Amt.</th>
             <th>Max Loan Amt.</th>
             <th>Monthly Income</th>
             <th>Eligibility Status</th>
@@ -221,7 +225,7 @@
             <th>Application Id</th>
             <th>Firstname</th>
             <th>Middlename</th>
-            <th>Lastname</th> 
+            <th>Lastname</th>
             <th>Email</th>
             <th>Phone</th>
             <th>DOB</th>
@@ -259,7 +263,7 @@
         <tr>
             <th>Application Id</th>
             <th>Employment Type</th>
-            <th>Organization Type</th> 
+            <th>Organization Type</th>
             <th>Employer Name</th>
             <th>Age of Retirement</th>
         </tr>
@@ -278,14 +282,14 @@
         <tr>
             <th>Application Id</th>
             <th>Property Location</th>
-            <th>Property Name</th> 
+            <th>Property Name</th>
             <th>Estimated Value</th>
         </tr>
         <tr *ngFor="let propertydetail of propertyDetail">
             <td><input type="number" placeholder="Enter Application Id" name="applicationId" [(ngModel)]="propertydetail.applicationId"></td>
             <td>{{ propertydetail.property.propertyLocation }}</td>
             <td>{{ propertydetail.property.propertyName }}</td>
-            <td>{{ propertydetail.property.estimatedAmount }}</td>   
+            <td>{{ propertydetail.property.estimatedAmount }}</td>
         </tr>
     </table>
 </div> -->

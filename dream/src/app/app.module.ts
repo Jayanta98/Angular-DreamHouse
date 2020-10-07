@@ -30,6 +30,12 @@ import { AdminCreateComponent } from './admin-create/admin-create.component';
 import { AdminUpdateComponent } from './admin-update/admin-update.component';
 import { ApplyGateComponent } from './apply-gate/apply-gate.component';
 import { AdminErrorComponent } from './admin-error/admin-error.component';
+import { EditGateComponent } from './edit-gate/edit-gate.component';
+import { EditRegistrationComponent } from './edit-registration/edit-registration.component';
+import { EditIncomeComponent } from './edit-income/edit-income.component';
+import { EditPropertyComponent } from './edit-property/edit-property.component';
+import { EditLoanComponent } from './edit-loan/edit-loan.component';
+import { EditDocumentComponent } from './edit-document/edit-document.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +68,19 @@ import { AdminErrorComponent } from './admin-error/admin-error.component';
 
     ApplyGateComponent,
 
-    AdminErrorComponent
+    AdminErrorComponent,
+
+    EditGateComponent,
+
+    EditRegistrationComponent,
+
+    EditIncomeComponent,
+
+    EditPropertyComponent,
+
+    EditLoanComponent,
+
+    EditDocumentComponent
   ],
   imports: [
     BrowserModule,
