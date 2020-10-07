@@ -72,6 +72,4 @@ export class CustomerService {
     return this.http.get<FormStatus>(url);
   }
 
-
-
 }
