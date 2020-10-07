@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 import { AdminLogin } from './models/AdminLogin';
 import { AdminLoginStatus } from './models/AdminLoginStatus';
-
+import { DocFields } from './models/DocFields';
 import { ApplicationDetails } from './models/ApplicationDetails';
 import { PropertyFields } from './models/PropertyFields';
 import { LoanFields } from './models/LoanFields';
@@ -77,7 +77,10 @@ export class AdminService {
     return this.http.get<LoanFields>(url);
   }
 
-
+  viewDoc(applicationId: number) : Observable<DocFields> {
+    let url = 'http://localhost:9292/view-document?applicationId='+applicationId;
+    return this.http.get<DocFields>(url);
+  }
 
 
 

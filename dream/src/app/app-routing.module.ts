@@ -62,12 +62,12 @@ const routes: Routes = [
   },
 
   { path: 'admin-dashboard', component: AdmindashboardComponent ,
-  children: [
-    { path: 'admin-view', component: AdminViewComponent },
-    { path: 'admin-create', component: AdminCreateComponent },
-    { path: 'admin-update', component: AdminUpdateComponent },
-  ]
-},
+    children: [
+      { path: 'admin-view', component: AdminViewComponent },
+      { path: 'admin-create', component: AdminCreateComponent },
+      { path: 'admin-update', component: AdminUpdateComponent },
+    ]
+  },
 
 
 

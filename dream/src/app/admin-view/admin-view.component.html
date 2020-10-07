@@ -1,25 +1,22 @@
-<div class="justify-content-center align-content-center d-flex">
-<div class="btn-group ">
+<div class="btn-group">
     <button (click)="viewApplications()" >View all Applications</button>
     <button (click)="viewIncomeList()" >View all Income List</button>
     <button (click)="viewPropertyList()" >View all Property List</button>
     <button (click)="viewLoanList()" >View all Loan List</button>
 </div>
-</div>
 <br />
 <br />
-<div class="justify-content-center align-content-center d-flex">
 <div class="search-id">
-    <label for="applicationId"><b>Enter Customer Application No:</b></label>
+    <label for="applicationId"><b>Enter Application No:</b></label>
     <input type="number" placeholder="Enter Application No" name="applicationId" [(ngModel)]="applicationId" required>
     <button (click)="viewAppDetail()" type="submit">Search App Details</button>
     <button (click)="viewIncomeDetail()" type="submit">Search Income Details</button>
     <button (click)="viewPropertyDetail()" type="submit">Search Property Details</button>
-    <button (click)="viewLoanDetail()" type="submit">Search Loan Details</button><br />
+    <button (click)="viewLoanDetail()" type="submit">Search Loan Details</button>
+    <button (click)="viewDocuments()" type="submit">View Documents</button><br />
     <div class="error" *ngIf="showError">
         <p>{{ errorMsg }}</p>
     </div>
-</div>
 </div>
 <br />
 <br />
@@ -219,109 +216,47 @@
     </table>
 </div>
 
-<!-- <div *ngIf="viewAppDetail">
+<div style="margin-left: 70px; margin-right: 70px;" *ngIf="showDoc">
+    <!-- <div class="row">
+        <div class="column">
+            <img style="width: 40%;" src="http://localhost:9292/download/{{ doc.panCard }}" alt="pan_card">
+        </div>
+        <div class="column">
+            <img style="width: 100px; height: 100px;" src="http://localhost:9292/download/{{ doc.voterIdCard }}" alt="voter_card">
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <img style="width: 100px; height: 100px;" src="http://localhost:9292/download/{{ doc.salarySlip }}" alt="sal_slip">
+        </div>
+        <div class="column">
+            <img style="width: 100px; height: 100px;" src="http://localhost:9292/download/{{ doc.loa }}" alt="loa">
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <img style="width: 100px; height: 100px;" src="http://localhost:9292/download/{{ doc.nocFromBuilder }}" alt="noc">
+        </div>
+        <div class="column">
+            <img style="width: 100px; height: 100px;" src="http://localhost:9292/download/{{ doc.agreementToSale }}" alt="sale_agreement">
+        </div>
+    </div> -->
     <table style="width:100%">
         <tr>
-            <th>Application Id</th>
-            <th>Firstname</th>
-            <th>Middlename</th>
-            <th>Lastname</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>DOB</th>
-            <th>Nationality</th>
-            <th>Aadhar</th>
-            <th>Pan</th>
-            <th>Appointment Date</th>
-            <th>Status</th>
-            <th>Account No</th>
-            <th>Amount</th>
-            <th>Account Type</th>
+            <th>Pan Card</th>
+            <th>Voter Card</th>
+            <th>Salary Slip</th>
+            <th>Letter of Agreement</th>
+            <th>NOC from builder</th>
+            <th>Agreement to Sale</th>
         </tr>
-        <tr *ngFor="let appdetail of appDetail">
-            <td><input type="number" placeholder="Enter Application Id" name="applicationId" [(ngModel)]="appdetail.applicationId"></td>
-            <td>{{ appdetail.applicationId }}</td>
-            <td>{{ appdetail.firstname }}</td>
-            <td>{{ appdetail.middlename}}</td>
-            <td>{{ appdetail.lastname }}</td>
-            <td>{{ appdetail.email }}</td>
-            <td>{{ appdetail.phoneNo }}</td>
-            <td>{{ appdetail.dateOfBirth }}</td>
-            <td>{{ appdetail.nationality}}</td>
-            <td>{{ appdetail.aadharNo }}</td>
-            <td>{{ appdetail.panNo }}</td>
-            <td>{{ appdetail.dateOfAppointment }}</td>
-            <td>{{ appdetail.applicationStatusMessage}}</td>
-            <td>{{ appdetail.accountNo}}</td>
-            <td>{{ appdetail.ammount}}</td>
-            <td>{{ appdetail.accountType}}</td>
+        <tr>
+            <td><a href="http://localhost:9292/download/{{ doc.panCard }}" target="_blank">View PanCard</a></td>
+            <td><a href="http://localhost:9292/download/{{ doc.voterIdCard }}" target="_blank">View Voter Card</a></td>
+            <td><a href="http://localhost:9292/download/{{ doc.salarySlip }}" target="_blank">View Salary Slip</a></td>
+            <td><a href="http://localhost:9292/download/{{ doc.loa }}" target="_blank">View LOA</a></td>
+            <td><a href="http://localhost:9292/download/{{ doc.nocFromBuilder }}" target="_blank">View NOC</a></td>
+            <td><a href="http://localhost:9292/download/{{ doc.agreementToSale }}" target="_blank">View Sale Agreement</a></td>
         </tr>
     </table>
 </div>
-<div *ngIf="viewIncomeDetail">
-    <table style="width:100%">
-        <tr>
-            <th>Application Id</th>
-            <th>Employment Type</th>
-            <th>Organization Type</th>
-            <th>Employer Name</th>
-            <th>Age of Retirement</th>
-        </tr>
-        <tr *ngFor="let incomedetail of incomeDetail">
-            <td><input type="number" placeholder="Enter Application Id" name="applicationId" [(ngModel)]="incomedetail.app"></td>
-            <td>{{ incomedetail.income.typeOfEmployement }}</td>
-            <td>{{ incomedetail.income.organizationType }}</td>
-            <td>{{ incomedetail.income.employerName }}</td>
-            <td>{{ incomedetail.income.retirementAge }}</td>
-        </tr>
-    </table>
-</div>
-
-<div *ngIf="viewPropertyDetail">
-    <table style="width:100%">
-        <tr>
-            <th>Application Id</th>
-            <th>Property Location</th>
-            <th>Property Name</th>
-            <th>Estimated Value</th>
-        </tr>
-        <tr *ngFor="let propertydetail of propertyDetail">
-            <td><input type="number" placeholder="Enter Application Id" name="applicationId" [(ngModel)]="propertydetail.applicationId"></td>
-            <td>{{ propertydetail.property.propertyLocation }}</td>
-            <td>{{ propertydetail.property.propertyName }}</td>
-            <td>{{ propertydetail.property.estimatedAmount }}</td>
-        </tr>
-    </table>
-</div> -->
-
-<!-- <div *ngIf="viewLoanDetail">
-    <table style="width:100%">
-        <tr> -->
-            <!-- <th>Application Id</th>
-            <th>Loan Amount</th>
-            <th>Tenure (Monthly)</th>
-            <th>Monthly Income</th>  -->
-            <!-- <th>Max Loan Amount</th>
-            <th>Interest Rate</th>
-            <th>EMI</th>
-            <th>Emi startdate</th>
-            <th>Emi enddate</th>
-            <th>Loan Status</th>
-            <th>Eligibility Status</th> -->
-        <!-- </tr> -->
-        <!-- <tr *ngFor="let loandetail of loanDetail">
-            <td><input type="number" placeholder="Enter Application Id" name="applicationId" [(ngModel)]="loandetail.applicationId"></td>
-            <td>{{ loandetail.loan.loanAmount }}</td>
-            <td>{{ loandetail.loan.tenure }}</td>
-            <td>{{ loandetail.loan.customerMonthlyIncome }}</td> -->
-            <!-- <td>{{ loandetail.loan.maxLoanAmount }}</td>
-            <td>{{ loandetail.loan.interestRate }}</td>
-            <td>{{ loandetail.loan.emi }}</td>
-            <td>{{ loandetail.loan.startDate }}</td>
-            <td>{{ loandetail.loan.endDate }}</td>
-            <td>{{ loandetail.loan.loanStatus }}</td>
-            <td>{{ loandetail.loan.eligibilityStatus }}</td>    -->
-        <!-- </tr>
-    </table>
-</div> -->
-
