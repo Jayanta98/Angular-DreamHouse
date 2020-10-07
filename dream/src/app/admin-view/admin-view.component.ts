@@ -278,10 +278,11 @@ export class AdminViewComponent implements OnInit {
         this.showDoc = false;
       }
       else if(this.showDoc == false) {
-        this.showDoc = !this.showDoc;
+        this.showDoc = true
         this.showAppDetail = false;
         this.showIncomeDetail = false;
         this.showPropertyDetail = false;
+        this.showLoanDetail = false;
         this.showError = false;
         this.showApplication = false;
         this.showIncomeList = false;

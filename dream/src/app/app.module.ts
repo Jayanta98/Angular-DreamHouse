@@ -36,6 +36,7 @@ import { EditIncomeComponent } from './edit-income/edit-income.component';
 import { EditPropertyComponent } from './edit-property/edit-property.component';
 import { EditLoanComponent } from './edit-loan/edit-loan.component';
 import { EditDocumentComponent } from './edit-document/edit-document.component';
+import { ThankYouComponent } from './thank-you/thank-you.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,9 @@ import { EditDocumentComponent } from './edit-document/edit-document.component';
 
     EditLoanComponent,
 
-    EditDocumentComponent
+    EditDocumentComponent,
+
+    ThankYouComponent
   ],
   imports: [
     BrowserModule,
