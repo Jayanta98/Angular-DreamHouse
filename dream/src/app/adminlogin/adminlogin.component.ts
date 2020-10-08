@@ -28,7 +28,7 @@ export class AdminloginComponent implements OnInit {
 
     this.adminrService.loginAdmin(this.adminLogin).subscribe(response => {
       this.adminLoginStatus = response;
-
+alert(JSON.stringify(this.adminLoginStatus));
       if(this.adminLoginStatus.status == true) {
         sessionStorage.setItem('adminName', String(this.adminLoginStatus.name));
         sessionStorage.setItem('adminId', String(this.adminLoginStatus.adminId));
