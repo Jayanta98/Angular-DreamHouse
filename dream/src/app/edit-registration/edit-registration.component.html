@@ -101,7 +101,7 @@
 
           <div class="form-group">
             <label>Date of Birth</label>
-            <input type="text" name="dateofBirth" placeholder="Enter DOB in YYYY-MM-DD Format" class="form-control" [(ngModel)]="regiDetails.dateOfBirth" #dateofBirth="ngModel" [ngClass]="{ 'is-invalid': f.submitted && dateofBirth.invalid }" required >
+            <input type="date" name="dateofBirth" placeholder="Enter DOB in YYYY-MM-DD Format" class="form-control" [(ngModel)]="regiDetails.dateOfBirth" #dateofBirth="ngModel" [ngClass]="{ 'is-invalid': f.submitted && dateofBirth.invalid }" required >
             <div *ngIf="f.submitted && dateofBirth.invalid" class="invalid-feedback">
                 <div *ngIf="dateofBirth.errors.required">Date Of Birth is required</div>
 
@@ -111,7 +111,11 @@
 
         <div class="form-group">
           <label>Gender</label>
-          <input type="text" name="gender" class="form-control" [(ngModel)]="regiDetails.gender" #gender="ngModel" [ngClass]="{ 'is-invalid': f.submitted && gender.invalid }" required >
+          <select type="text" name="gender" class="form-control" [(ngModel)]="regiDetails.gender" #gender="ngModel" [ngClass]="{ 'is-invalid': f.submitted && gender.invalid }" required >
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
           <div *ngIf="f.submitted && gender.invalid" class="invalid-feedback">
               <div *ngIf="gender.errors.required">Mention you Gender Please ! </div>
 

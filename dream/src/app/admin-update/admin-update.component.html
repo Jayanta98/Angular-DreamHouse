@@ -101,7 +101,7 @@
 
             <div class="form-group">
               <label>Enter EMI Start Date </label>
-              <input type="text" name="startDate" placeholder="Enter Date in YYYY-MM-DD" class="form-control" [(ngModel)]="loanDetailsforadmin.startDate" #startDate="ngModel" [ngClass]="{ 'is-invalid': f.submitted && startDate.invalid }" required >
+              <input type="date" name="startDate" placeholder="Enter Date in YYYY-MM-DD" class="form-control" [(ngModel)]="loanDetailsforadmin.startDate" #startDate="ngModel" [ngClass]="{ 'is-invalid': f.submitted && startDate.invalid }" required >
               <div *ngIf="f.submitted && startDate.invalid" class="invalid-feedback">
                   <div *ngIf="startDate.errors.required">EMI Start Date is required</div>
               </div>
@@ -109,7 +109,7 @@
 
           <div class="form-group">
             <label>Enter EMI End Date </label>
-            <input type="text" name="endDate" placeholder="Enter Date in YYYY-MM-DD" class="form-control" [(ngModel)]="loanDetailsforadmin.endDate" #endDate="ngModel" [ngClass]="{ 'is-invalid': f.submitted && endDate.invalid }" required >
+            <input type="date" name="endDate" placeholder="Enter Date in YYYY-MM-DD" class="form-control" [(ngModel)]="loanDetailsforadmin.endDate" #endDate="ngModel" [ngClass]="{ 'is-invalid': f.submitted && endDate.invalid }" required >
             <div *ngIf="f.submitted && endDate.invalid" class="invalid-feedback">
                 <div *ngIf="endDate.errors.required">EMI End Date is required</div>
             </div>
@@ -117,7 +117,12 @@
 
         <div class="form-group">
           <label>Update Loan Status </label>
-          <input type="text" name="loanStatus" placeholder="Apply/Running/Completed/Rejected" class="form-control" [(ngModel)]="loanDetailsforadmin.loanStatus" #loanStatus="ngModel" [ngClass]="{ 'is-invalid': f.submitted && loanStatus.invalid }" required >
+          <select type="text" name="loanStatus" placeholder="Apply/Running/Completed/Rejected" class="form-control" [(ngModel)]="loanDetailsforadmin.loanStatus" #loanStatus="ngModel" [ngClass]="{ 'is-invalid': f.submitted && loanStatus.invalid }" required >
+            <option value="Apply">Apply</option>
+            <option value="Running">Running</option>
+            <option value="Completed">Completed</option>
+            <option value="Rejected">Rejected</option>
+          </select> 
           <div *ngIf="f.submitted && loanStatus.invalid" class="invalid-feedback">
               <div *ngIf="loanStatus.errors.required">Please Update Loan Status</div>
           </div>
@@ -200,7 +205,11 @@
 
                   <div class="form-group">
                       <label>Enter New Status</label>
-                      <input type="text" name="newStatus" placeholder="Apply/Approved/Rejected"  class="form-control" [(ngModel)]="updateAppStatusDetail.newStatus" #newStatus="ngModel" [ngClass]="{ 'is-invalid': f.submitted && newStatus.invalid }" required>
+                      <select type="text" name="newStatus" placeholder="Apply/Approved/Rejected"  class="form-control" [(ngModel)]="updateAppStatusDetail.newStatus" #newStatus="ngModel" [ngClass]="{ 'is-invalid': f.submitted && newStatus.invalid }" required>
+                        <option value="Apply">Apply</option>
+                        <option value="Approved">Approved</option>
+                        <option value="Rejected">Rejected</option>
+                      </select>
                       <div *ngIf="f.submitted && newStatus.invalid" class="invalid-feedback">
                           <div *ngIf="newStatus.errors.required">Please Enter New Updated Application Status </div>
                       </div>

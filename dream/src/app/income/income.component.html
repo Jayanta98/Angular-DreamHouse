@@ -15,7 +15,11 @@
 
                 <div class="form-group col-6">
                     <label>Type of Employment</label>
-                    <input type="text" placeholder="Private/Government/Self Employment" name="typeofemployment" class="form-control" [(ngModel)]="incomeDetails.income.typeOfEmployement" #typeofemployment="ngModel" [ngClass]="{ 'is-invalid': f.submitted && typeofemployment.invalid }" required>
+                    <select type="text" placeholder="Private/Government/Self Employment" name="typeofemployment" class="form-control" [(ngModel)]="incomeDetails.income.typeOfEmployement" #typeofemployment="ngModel" [ngClass]="{ 'is-invalid': f.submitted && typeofemployment.invalid }" required>
+                        <option value="Private">Private</option>
+                        <option value="Government">Government</option>
+                        <option value="Self Organization">Self Organization</option>
+                    </select>    
                     <div *ngIf="f.submitted && typeofemployment.invalid" class="invalid-feedback">
                         <div *ngIf="typeofemployment.errors.required">Type of Employment is required</div>
                     </div>
@@ -23,7 +27,11 @@
 
                 <div class="form-group col-6">
                     <label>Type of Organization</label>
-                    <input type="text" placeholder="Private/Government/Self Organization" name="organizationtype" class="form-control" [(ngModel)]="incomeDetails.income.organizationType" #organizationtype="ngModel" [ngClass]="{ 'is-invalid': f.submitted && organizationtype.invalid }" required>
+                    <select type="text" placeholder="Private/Government/Self Organization" name="organizationtype" class="form-control" [(ngModel)]="incomeDetails.income.organizationType" #organizationtype="ngModel" [ngClass]="{ 'is-invalid': f.submitted && organizationtype.invalid }" required>
+                        <option value="Private">Private</option>
+                        <option value="Government">Government</option>
+                        <option value="Self Organization">Self Organization</option>
+                    </select>    
                     <div *ngIf="f.submitted && organizationtype.invalid" class="invalid-feedback">
                         <div *ngIf="organizationtype.errors.required">Organization Type is required</div>
                     </div>
