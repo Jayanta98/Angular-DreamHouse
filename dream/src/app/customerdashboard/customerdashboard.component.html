@@ -5,9 +5,12 @@
 
 </div>
 
+
 <h1 class="text-center " style="color: #ff5e00;">Hi {{name}}, Welcome To Customer-DashBoard</h1>
 
-
+<div class="justify-content-center align-content-center d-flex">
+  <a  class="btn btn-danger "  [routerLink]="['/home']">Logout</a>
+</div>
 
 <!--Make Two angular Form One for Application Tracker and One for Account Tracker-->
 <div class="p-3 m-3">
@@ -29,7 +32,10 @@
 
       </form>
       <div *ngIf="showStatus">
+        <h4>{{appdetail.firstname}} {{appdetail.middlename}} {{appdetail.lastname}}</h4>
         <h4>Your application Status: {{ statusMsg }}</h4>
+        <h4>Date of Appointment {{appdetail.dateOfAppointment}}</h4>
+        <h4>Loan Account No:{{appdetail.accountNo}}</h4>
       </div>
       <div *ngIf="showError">
         <h4 style="color: orangered;">{{ statusMsg }}</h4>

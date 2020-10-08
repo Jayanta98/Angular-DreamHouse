@@ -24,7 +24,7 @@ export class ApplyGateComponent implements OnInit {
   trackForm() {
     this.customerService.formTrack(this.applicationId).subscribe(response => {
       this.formStatus = response;
-      alert(JSON.stringify(this.formStatus));
+     // alert(JSON.stringify(this.formStatus));
 
       if(this.formStatus.status == true) {
         if(this.formStatus.currentForm == 1) {
@@ -48,7 +48,8 @@ export class ApplyGateComponent implements OnInit {
         }
       }
       else {
-        alert(JSON.stringify(this.formStatus));
+        //alert(JSON.stringify(this.formStatus));
+        this.router.navigate(['/errorby-admin']);
       }
     })
   }

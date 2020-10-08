@@ -122,7 +122,7 @@
             <option value="Running">Running</option>
             <option value="Completed">Completed</option>
             <option value="Rejected">Rejected</option>
-          </select> 
+          </select>
           <div *ngIf="f.submitted && loanStatus.invalid" class="invalid-feedback">
               <div *ngIf="loanStatus.errors.required">Please Update Loan Status</div>
           </div>
@@ -206,7 +206,7 @@
                   <div class="form-group">
                       <label>Enter New Status</label>
                       <select type="text" name="newStatus" placeholder="Apply/Approved/Rejected"  class="form-control" [(ngModel)]="updateAppStatusDetail.newStatus" #newStatus="ngModel" [ngClass]="{ 'is-invalid': f.submitted && newStatus.invalid }" required>
-                        <option value="Apply">Apply</option>
+                        <option value="Pending">Pending</option>
                         <option value="Approved">Approved</option>
                         <option value="Rejected">Rejected</option>
                       </select>
