@@ -29,7 +29,7 @@
   <div class="card m-3">
       <h2 class="card-header text-center text-danger m-3">Update Loan Form</h2>
       <div class="card-body">
-          <form name="form" (ngSubmit)="f.form.valid && updateLoanOnSubmit()" #f="ngForm" novalidate>
+        <form name="form" (ngSubmit)="f.form.valid && updateLoanOnSubmit()" #f="ngForm" novalidate>
 
 
 
@@ -101,7 +101,7 @@
 
             <div class="form-group">
               <label>Enter EMI Start Date </label>
-              <input type="text" name="startDate" placeholder="Enter Date in YY-MM-DD" class="form-control" [(ngModel)]="loanDetailsforadmin.startDate" #startDate="ngModel" [ngClass]="{ 'is-invalid': f.submitted && startDate.invalid }" required >
+              <input type="text" name="startDate" placeholder="Enter Date in YYYY-MM-DD" class="form-control" [(ngModel)]="loanDetailsforadmin.startDate" #startDate="ngModel" [ngClass]="{ 'is-invalid': f.submitted && startDate.invalid }" required >
               <div *ngIf="f.submitted && startDate.invalid" class="invalid-feedback">
                   <div *ngIf="startDate.errors.required">EMI Start Date is required</div>
               </div>
@@ -109,7 +109,7 @@
 
           <div class="form-group">
             <label>Enter EMI End Date </label>
-            <input type="text" name="endDate" placeholder="Enter Date in YY-MM-DD" class="form-control" [(ngModel)]="loanDetailsforadmin.endDate" #endDate="ngModel" [ngClass]="{ 'is-invalid': f.submitted && endDate.invalid }" required >
+            <input type="text" name="endDate" placeholder="Enter Date in YYYY-MM-DD" class="form-control" [(ngModel)]="loanDetailsforadmin.endDate" #endDate="ngModel" [ngClass]="{ 'is-invalid': f.submitted && endDate.invalid }" required >
             <div *ngIf="f.submitted && endDate.invalid" class="invalid-feedback">
                 <div *ngIf="endDate.errors.required">EMI End Date is required</div>
             </div>
@@ -121,12 +121,15 @@
           <div *ngIf="f.submitted && loanStatus.invalid" class="invalid-feedback">
               <div *ngIf="loanStatus.errors.required">Please Update Loan Status</div>
           </div>
-      </div>
+        </div>
               <div class="text-center">
                   <button class="btn btn-primary mr-1">Next</button>
                   <button class="btn btn-secondary" type="reset">Cancel</button>
               </div>
           </form>
+      </div>
+      <div *ngIf="showLoanMsg">
+        <h4 style="text-align: center; color: orangered;">{{ updateLoanMsg }}</h4>
       </div>
     </div>
 
@@ -169,9 +172,6 @@
         <h5 class="card-title">Customer Full Name is  &nbsp;{{ fName }}  &nbsp;{{ mName}} &nbsp;{{ lName}} </h5>
         <h5 class="card-title">Customer Email is &nbsp; {{ custEmail }}</h5>
         <h5 class="card-title">Customer Application Status is &nbsp; {{ applicationStatus }}</h5>
-
-
-       <!--<a [routerLink]="['/income']" class="btn btn-primary">GoTo Next</a>-->
       </div>
       <div class="card-footer text-muted">
 
@@ -212,6 +212,9 @@
                   <button class="btn btn-secondary" type="reset">Cancel</button>
               </div>
           </form>
+      </div>
+      <div *ngIf="showStatusMsg">
+        <h4 style="text-align: center; color: orangered;">{{ appStatusMsg }}</h4>
       </div>
     </div>
 

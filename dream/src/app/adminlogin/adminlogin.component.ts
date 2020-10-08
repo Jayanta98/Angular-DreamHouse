@@ -16,7 +16,7 @@ export class AdminloginComponent implements OnInit {
   adminLoginStatus: AdminLoginStatus;
 
   constructor(
-    private adminrService: AdminService,
+    private adminService: AdminService,
     private router: Router
   ) { }
 
@@ -24,11 +24,10 @@ export class AdminloginComponent implements OnInit {
   }
 
   onSubmit(){
-    alert(JSON.stringify(this.adminLogin));
-
-    this.adminrService.loginAdmin(this.adminLogin).subscribe(response => {
+    this.adminService.loginAdmin(this.adminLogin).subscribe(response => {
       this.adminLoginStatus = response;
-alert(JSON.stringify(this.adminLoginStatus));
+      //alert(JSON.stringify(this.adminLoginStatus));
+
       if(this.adminLoginStatus.status == true) {
         sessionStorage.setItem('adminName', String(this.adminLoginStatus.name));
         sessionStorage.setItem('adminId', String(this.adminLoginStatus.adminId));

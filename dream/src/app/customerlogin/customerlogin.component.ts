@@ -25,8 +25,6 @@ export class CustomerloginComponent implements OnInit {
   }
 
   onSubmit(){
-   // alert(JSON.stringify(this.userlogin));
-
     this.customerService.customerLogin(this.userlogin).subscribe(response => {
       this.userLoginStatus = response;
 

@@ -11,7 +11,7 @@ import { Status } from '../models/Status';
 })
 
 export class PropertyComponent implements OnInit {
-  // model: any = {};
+
   propertyDetails: PropertyDetails = new PropertyDetails();
   applicationId: any;
   propertyStatus: Status;
@@ -27,12 +27,10 @@ export class PropertyComponent implements OnInit {
 
   onSubmit(){
     this.propertyDetails.applicationId = this.applicationId;
-    alert(JSON.stringify(this.propertyDetails));
     localStorage.setItem('estimatedamount',String(this.propertyDetails.property.estimatedAmount));
 
     this.customerService.propertySubmit(this.propertyDetails).subscribe(response => {
       this.propertyStatus = response;
-      alert(JSON.stringify(this.propertyStatus));
 
       if(this.propertyStatus.status == true) {
         this.router.navigate(['/loan']);

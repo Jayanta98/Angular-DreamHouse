@@ -42,7 +42,6 @@
         <h5 class="card-title">Customer Account Type &nbsp; {{ accDetailsByAdmin.account.accountType}}</h5>
         <h5 class="card-title">Customer Loan Amount &nbsp; {{  this.accDetailsByAdmin.account.amount }}</h5>
         <p class="card-text text-danger">If Loan Account Number shows 0 ,It means Account is Not Created</p>
-       <!--<a [routerLink]="['/income']" class="btn btn-primary">GoTo Next</a>-->
       </div>
       <div class="card-footer text-muted">
 
@@ -139,6 +138,12 @@
                   <button class="btn btn-secondary" type="reset">Cancel</button>
               </div>
           </form>
+      </div>
+      <div *ngIf="showError">
+        <h4 style="text-align: center; color: orangered;">{{ msg }}</h4>
+      </div>
+      <div *ngIf="showMsg">
+        <h4 style="text-align: center; color: green;">{{ msg }}</h4>
       </div>
     </div>
 

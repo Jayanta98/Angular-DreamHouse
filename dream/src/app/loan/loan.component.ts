@@ -11,7 +11,6 @@ import { Status } from '../models/Status';
 })
 export class LoanComponent implements OnInit {
 
-  // model={};
   loanDetails: LoanDetails = new LoanDetails();
   applicationId: any;
   loanSubmitStatus: Status;
@@ -29,14 +28,10 @@ export class LoanComponent implements OnInit {
 
   onSubmit(){
     this.loanDetails.applicationId = this.applicationId;
-    alert(JSON.stringify(this.loanDetails));
     
     this.customerService.loanSubmit(this.loanDetails).subscribe(response => {
       this.loanSubmitStatus = response;
 
-      alert(JSON.stringify(this.loanSubmitStatus));      
-      console.log(this.loanSubmitStatus.status);
-      
       if(this.loanSubmitStatus.status == true) {
         this.router.navigate(['/document']);
       }

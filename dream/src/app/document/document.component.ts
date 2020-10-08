@@ -59,7 +59,6 @@ export class DocumentComponent implements OnInit {
   }
 
   onSubmit(){
-    // this.applicationId = 10035;
     let formData: FormData = new FormData();
     formData.append('applicationId', this.applicationId);
     formData.append('panCard', this.panCard);

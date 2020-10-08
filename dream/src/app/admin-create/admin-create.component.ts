@@ -23,6 +23,10 @@ export class AdminCreateComponent implements OnInit {
   accNumber:any;
   applicationStatus:any;
 
+  showMsg: boolean = false;
+  showError: boolean = false;
+  msg: string;
+
   constructor(
     private adminService:AdminService, 
     private customerService: CustomerService, 
@@ -53,22 +57,25 @@ export class AdminCreateComponent implements OnInit {
 
       this.showDetails = true;
 
-      alert(JSON.stringify(this.appdetail));
-
-      if(this.appdetail.status==true){
-        console.log(this.appdetail.applicationStatusMessage);
-      }
-      else{
+      if(this.appdetail.status==false){
         this.router.navigate(['/errorby-admin']);
       }
     })
   }
 
   mySubmit(){
-    alert(JSON.stringify(this.accDetailsByAdmin)) ;
     this.adminService.createAccountByAdmin(this.accDetailsByAdmin).subscribe(response=>{
       this.accCreateStatus=response;
-      alert( JSON.stringify(this.accCreateStatus));
+      if(this.accCreateStatus.status == true) {
+        this.showMsg = true;
+        this.showError = false;
+        this.msg = this.accCreateStatus.statusMessage;
+      }
+      else {
+        this.showError = true;
+        this.showMsg = false;
+        this.msg = this.accCreateStatus.statusMessage;
+      }
     })
   }
 }
