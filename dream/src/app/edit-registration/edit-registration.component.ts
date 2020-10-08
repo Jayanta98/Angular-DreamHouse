@@ -21,9 +21,9 @@ export class EditRegistrationComponent implements OnInit {
 
   ForRegistrationDetails(){
     this.adminService.getRegistrationDEtailsForEdit(this.customerAppId).subscribe(response=>{
-      alert(JSON.stringify(this.customerAppId));
+      //alert(JSON.stringify(this.customerAppId));
       this.regiDetails=response;
-      alert(JSON.stringify(this.regiDetails));
+     // alert(JSON.stringify(this.regiDetails));
       if(this.regiDetails.status==true){
 
       }
@@ -34,13 +34,13 @@ export class EditRegistrationComponent implements OnInit {
 
   }
 
-  feedback:Status;
+  feedback:Status=new Status();
 
   onSubmitUpdate(){
-    alert(JSON.stringify(this.regiDetails));
+    //alert(JSON.stringify(this.regiDetails));
     this.adminService.updateRegistrationByUser(this.regiDetails).subscribe(response=>{
       this.feedback=response;
-      alert(JSON.stringify(this.feedback));
+     // alert(JSON.stringify(this.feedback));
     })
 
   }
