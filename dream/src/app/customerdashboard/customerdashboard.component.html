@@ -28,6 +28,12 @@
         </div>
 
       </form>
+      <div *ngIf="showStatus">
+        <h4>Your application Status: {{ statusMsg }}</h4>
+      </div>
+      <div *ngIf="showError">
+        <h4 style="color: orangered;">{{ statusMsg }}</h4>
+      </div>
     </div>
 
 </div>
@@ -50,6 +56,14 @@
         </div>
 
       </form>
+      <div *ngIf="showStatus">
+        <h5>Your Account Type: {{ accType }}</h5>
+        <h5>IFSC Code: {{ ifscCode }}</h5>
+        <h5>Branch Name: {{ branchName }}</h5>
+      </div>
+      <div *ngIf="showError">
+        <h4 style="color: orangered;">{{ statusMsg }}</h4>
+      </div>
     </div>
 
 </div>

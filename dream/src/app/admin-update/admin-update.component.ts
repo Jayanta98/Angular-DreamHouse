@@ -12,14 +12,17 @@ import { LoanDetailsForAdmin } from '../models/LoanDetailsForAdmin';
   templateUrl: './admin-update.component.html',
   styleUrls: ['./admin-update.component.css']
 })
+
 export class AdminUpdateComponent implements OnInit {
 
+  appId: number;
+  appdetail: ApplicationDetails = new ApplicationDetails();
 
-
-appId: number;
-appdetail: ApplicationDetails = new ApplicationDetails();
-
-  constructor(private adminService:AdminService,  private customerService: CustomerService, private router: Router) { }
+  constructor(
+    private adminService:AdminService,  
+    private customerService: CustomerService, 
+    private router: Router
+  ) { }
 
 
   ngOnInit(): void {
@@ -37,6 +40,9 @@ appdetail: ApplicationDetails = new ApplicationDetails();
   lName:any;
   myApplicationId:any;
 
+  showStatusMsg: boolean = false;
+  appStatusMsg: string;
+
   onApplicationSubmit(){
     this.customerService.getApplicationdetails(this.appId).subscribe(response =>{
       this.appdetail = response;
@@ -47,16 +53,9 @@ appdetail: ApplicationDetails = new ApplicationDetails();
       this.lName=this.appdetail.lastname;
 
       this.custEmail=this.appdetail.email;
-     this.applicationStatus= this.appdetail.applicationStatusMessage;
+      this.applicationStatus= this.appdetail.applicationStatusMessage;
 
-
-      alert(JSON.stringify(this.appdetail));
-
-      if(this.appdetail.status==true){
-        console.log(this.appdetail.applicationStatusMessage);
-        // this.router.navigate(['/'])
-      }
-      else{
+      if(this.appdetail.status==false){
         this.router.navigate(['/errorby-admin']);
       }
     })
@@ -64,11 +63,11 @@ appdetail: ApplicationDetails = new ApplicationDetails();
 
 
   mySubmit(){
-    alert(JSON.stringify(this.updateAppStatusDetail));
 
     this.adminService.updateApplicationStatus(this.updateAppStatusDetail).subscribe(response=>{
-     this.feedbackStatus=response;
-      alert(JSON.stringify(this.feedbackStatus)  );
+    this.feedbackStatus=response;
+      this.showStatusMsg = true;
+      this.appStatusMsg = this.feedbackStatus.statusMessage;
     })
   }
 
@@ -78,31 +77,26 @@ appdetail: ApplicationDetails = new ApplicationDetails();
 
   customerAppId:number;
   loanDetailsforadmin:LoanDetailsForAdmin=new LoanDetailsForAdmin();
+
   ForLoanDetails(){
-
-    alert(JSON.stringify(this.customerAppId));
-      this.adminService.getLoanDetailsForAdmin(this.customerAppId).subscribe(response=>{
-        this.loanDetailsforadmin=response;
-        alert(JSON.stringify(this.loanDetailsforadmin));
-
-
-      if(this.loanDetailsforadmin.myStatus==true){
-       // console.log(this.appdetail.applicationStatusMessage);
-        // this.router.navigate(['/'])
-      }
-      else{
+    this.adminService.getLoanDetailsForAdmin(this.customerAppId).subscribe(response=>{
+      this.loanDetailsforadmin=response;
+      if(this.loanDetailsforadmin.myStatus==false){
         this.router.navigate(['/errorby-admin']);
       }
-
-      })
+    })
   }
 
   gotStatus:Status;
+  showLoanMsg: boolean = false;
+  updateLoanMsg: string;
+
   updateLoanOnSubmit(){
-    alert(JSON.stringify(this.loanDetailsforadmin));
     this.adminService.updateLoanTableByAdmin(this.loanDetailsforadmin).subscribe(response=>{
       this.gotStatus=response;
-      alert(JSON.stringify(this.gotStatus));
+      this.showLoanMsg = true;
+      this.updateLoanMsg = this.gotStatus.statusMessage;
+
     })
   }
 

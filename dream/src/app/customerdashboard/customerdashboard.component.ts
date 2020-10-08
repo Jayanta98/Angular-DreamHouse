@@ -18,6 +18,12 @@ export class CustomerdashboardComponent implements OnInit {
   appdetail: ApplicationDetails = new ApplicationDetails();
   acdetail: Accountdetail = new Accountdetail();
   name:string;
+  showError: boolean = false;
+  showStatus: boolean = false;
+  statusMsg: string;
+  accType: string;
+  ifscCode: string;
+  branchName: string;
 
   constructor(
     private customerService: CustomerService,
@@ -32,14 +38,15 @@ export class CustomerdashboardComponent implements OnInit {
     this.customerService.getApplicationdetails(this.applicationId).subscribe(response =>{
       this.appdetail = response;
 
-      alert(JSON.stringify(this.appdetail));
-
       if(this.appdetail.status==true){
-        console.log(this.appdetail.applicationStatusMessage);
-        // this.router.navigate(['/'])
+        this.showStatus = true;
+        this.showError = false;
+        this.statusMsg = this.appdetail.applicationStatusMessage;
       }
       else{
-        this.router.navigate(['/error']);
+        this.showError = true;
+        this.showStatus = false;
+        this.statusMsg = this.appdetail.applicationStatusMessage;
       }
     })
   }
@@ -48,14 +55,17 @@ export class CustomerdashboardComponent implements OnInit {
     this.customerService.getAccountdetails(this.accountNo).subscribe(response =>{
       this.acdetail = response;
 
-      alert(JSON.stringify(this.acdetail));
-
       if(this.acdetail.accountStatus==true){
-        console.log(this.acdetail.accountStatus);
-        // this.router.navigate(['/']);
+        this.showStatus = true;
+        this.showError = false;
+        this.accType = this.acdetail.accountType;
+        this.ifscCode = this.acdetail.ifscCode;
+        this.branchName = this.acdetail.branchName;
       }
       else{
-        this.router.navigate(['/error']);
+        this.showError = true;
+        this.showStatus = false;
+        this.statusMsg = "Invalid account number";
       }
     })
 
