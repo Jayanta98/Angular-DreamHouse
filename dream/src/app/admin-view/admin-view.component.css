@@ -5,10 +5,14 @@ table, th, td {
 
 th, td {
     padding: 5px;
+
 }
 
 th {
     text-align: left;
+    background-color:green;
+    color:white;
+
 }
 
 .btn-group {
@@ -19,8 +23,8 @@ th {
     background-color: green; /*#dc3545*/
     border: 1px solid #794449;
     color: white;
-    padding: 10px 24px; 
-    cursor: pointer; 
+    padding: 10px 24px;
+    cursor: pointer;
     float: left;
     margin-right: 5px;
 }
@@ -47,7 +51,7 @@ th {
     background-color:#dc3545;
     border: 1px solid #794449;
     color: white;
-    cursor: pointer; 
+    cursor: pointer;
     margin-right: 5px;
 }
 
