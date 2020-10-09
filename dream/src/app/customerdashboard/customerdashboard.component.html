@@ -31,13 +31,13 @@
         </div>
 
       </form>
-      <div *ngIf="showStatus">
+      <div *ngIf="showAppStatus">
         <h4>{{appdetail.firstname}} {{appdetail.middlename}} {{appdetail.lastname}}</h4>
         <h4>Your application Status: {{ statusMsg }}</h4>
         <h4>Date of Appointment {{appdetail.dateOfAppointment}}</h4>
         <h4>Loan Account No:{{appdetail.accountNo}}</h4>
       </div>
-      <div *ngIf="showError">
+      <div *ngIf="showAppError">
         <h4 style="color: orangered;">{{ statusMsg }}</h4>
       </div>
     </div>
@@ -62,12 +62,12 @@
         </div>
 
       </form>
-      <div *ngIf="showStatus">
+      <div *ngIf="showAccStatus">
         <h5>Your Account Type: {{ accType }}</h5>
         <h5>IFSC Code: {{ ifscCode }}</h5>
         <h5>Branch Name: {{ branchName }}</h5>
       </div>
-      <div *ngIf="showError">
+      <div *ngIf="showAccError">
         <h4 style="color: orangered;">{{ statusMsg }}</h4>
       </div>
     </div>

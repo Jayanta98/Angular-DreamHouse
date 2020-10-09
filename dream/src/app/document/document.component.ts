@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Document } from '../models/document';
 import { CustomerService } from '../customer.service';
 import { Status } from '../models/Status';
 
@@ -11,7 +10,6 @@ import { Status } from '../models/Status';
 })
 export class DocumentComponent implements OnInit {
 
-  // model: {};
   docSubmitstatus: Status;
 
   applicationId: any;
@@ -22,8 +20,6 @@ export class DocumentComponent implements OnInit {
   nocFromBuilder: any;
   agreementToSale: any;
 
-
-  // document: Document= new Document();
 
   constructor(
     private customerService: CustomerService,
@@ -72,7 +68,6 @@ export class DocumentComponent implements OnInit {
 
     this.customerService.documentSubmit(formData).subscribe(response => {
       this.docSubmitstatus = response;
-      alert(JSON.stringify(this.docSubmitstatus));
 
       if(this.docSubmitstatus.status == true) {
         this.router.navigate(['/thank-you']);

@@ -18,8 +18,10 @@ export class CustomerdashboardComponent implements OnInit {
   appdetail: ApplicationDetails = new ApplicationDetails();
   acdetail: Accountdetail = new Accountdetail();
   name:string;
-  showError: boolean = false;
-  showStatus: boolean = false;
+  showAppError: boolean = false;
+  showAccError: boolean = false;
+  showAppStatus: boolean = false;
+  showAccStatus: boolean = false;
   statusMsg: string;
   accType: string;
   ifscCode: string;
@@ -39,14 +41,19 @@ export class CustomerdashboardComponent implements OnInit {
       this.appdetail = response;
 
       if(this.appdetail.status==true){
-        this.showStatus = true;
-        this.showError = false;
+        this.showAppStatus = true;
+        this.showAccStatus = false;
+        this.showAppError = false;
+        this.showAccError = false;
         this.statusMsg = this.appdetail.applicationStatusMessage;
       }
       else{
-        this.showError = true;
-        this.showStatus = false;
+        this.showAppError = true;
+        this.showAccError = false;
+        this.showAppStatus = false;
+        this.showAccStatus = false;
         this.statusMsg = this.appdetail.applicationStatusMessage;
+        this.router.navigate(['/errorby-admin']);
       }
     })
   }
@@ -56,16 +63,21 @@ export class CustomerdashboardComponent implements OnInit {
       this.acdetail = response;
 
       if(this.acdetail.accountStatus==true){
-        this.showStatus = true;
-        this.showError = false;
+        this.showAccStatus = true;
+        this.showAppStatus = true;
+        this.showAppError = false;
+        this.showAccError = false;
         this.accType = this.acdetail.accountType;
         this.ifscCode = this.acdetail.ifscCode;
         this.branchName = this.acdetail.branchName;
       }
       else{
-        this.showError = true;
-        this.showStatus = false;
+        this.showAccError = true;
+        this.showAppError = false;
+        this.showAccStatus = false;
+        this.showAppStatus = false;
         this.statusMsg = "Invalid account number";
+        this.router.navigate(['/errorby-admin']);
       }
     })
 
