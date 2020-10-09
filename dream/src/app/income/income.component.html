@@ -28,9 +28,11 @@
                 <div class="form-group col-6">
                     <label>Type of Organization</label>
                     <select type="text" placeholder="Private/Government/Self Organization" name="organizationtype" class="form-control" [(ngModel)]="incomeDetails.income.organizationType" #organizationtype="ngModel" [ngClass]="{ 'is-invalid': f.submitted && organizationtype.invalid }" required>
-                        <option value="Private">Private</option>
+                        <option value="Corportion">Corportion</option>
+                        <option value="Public Limited">Public Limited</option>
+                        <option value="Sole Proprietorship">Sole Proprietorship</option>
                         <option value="Government">Government</option>
-                        <option value="Self Organization">Self Organization</option>
+                        <option value="Other">Other</option>
                     </select>    
                     <div *ngIf="f.submitted && organizationtype.invalid" class="invalid-feedback">
                         <div *ngIf="organizationtype.errors.required">Organization Type is required</div>
